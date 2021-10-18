@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-% \newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -33,33 +33,89 @@
 	\end{frame}
 }
 
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#4}
+	Schnitt: \quad 13,6 / 20~P
+
+	\begin{itemize}[<+->]
+		\item 19 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
+		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item Ihr habt alle pünktlich abgegeben :)
+		\item Korrektur kam erst diese Woche, sorry dafür!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#4}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Aufgabe 4.2: Aufgabenstellung \textbf{genau} lesen und \textbf{nur} die erlaubten Zeichen benutzen!
+		\item Aufgabe 4.4c): im IS einer vollständigen Induktion müsst ihr die IV verwenden!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#5}
+	Schnitt: \quad 8,1 / 17~P
+
+	\begin{itemize}[<+->]
+		\item 19 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
+		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item Ihr habt alle pünktlich abgegeben :)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#5}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Viele Probleme mit den Aufgabenstellungen:
+		\item Aufgabe 5.1: Zeigen, dass $h_3$ ein Homomorphismus ist.
+		\item[] Das macht man, indem man $\forall x,y\in A^* : h_3(xy)=h_3(x)h_3(y)$ zeigt.
+		\item Aufgabe 5.2b): Beweise, dass Aussage A eine notwendige und hinreichende Bedingung für Aussage B ist.
+		\item[] Das macht man, indem man A \impl B und B \impl A zeigt.
+		\item Aufgabe 5.3b): Für \textbf{jedes} ${i\in\mathbb{N}_0} g^i(w)$ und $f(g^i(w))$ angeben.
+		\item Aufgabe 5.3d): Im Beweis kleinschrittig vorgehen. Jeder Schritt sollte ohne Händewedeln verständlich sein.
+		\item Aufgabe 5.4: Die war einfach schwer :/
+	\end{itemize}
+\end{frame}
 
 \framePrevEpisode
 
-\begin{frame}[t]{Wahr oder falsch?}
-	\Socrative
-	\FalseQuestionE{$\memwrite(m,a,v) \in \Val$.}{$\memwrite(m,a,v) \in \Val^\Adr$.}
-	\FalseQuestionE{$\memread(\memwrite(m,a,v), a) = m(a)$ \quad für alle $m,a,v$.}{$\memread(\memwrite(m,a,v), a) = v$.}
-	\FalseQuestionE{Im IR wird die Adresse des aktuellen Befehls gespeichert.}{Das geschieht im IAR – Im IR steht der Befehl selbst.}
-	%\TrueQuestionE{Die Befehlsholphase ist jede Ausführungsrunde identisch.}{}
-	\TrueQuestionE{Ein MIMA-Programm, welches von $-1$ abwärts zählt, kommt \\ irgendwann bei null raus.}{Unterlauf: Nach $-2^{23}$ kommt $2^{23}-1$.}
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-7-einstieg/6c223916-02c7-41bc-82b0-ec082b026ca3}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Wahr oder falsch?}
-	\FalseQuestionE{Der Akku führt bei der MIMA Berechnungen aus.}{Das macht die ALU. Im Akku wird das letzte Ergebnis zwischengespeichert.}
-	\FalseQuestionE{LDC $-5$ lädt $-5$ in den Akku.}{LDC funktioniert nicht mit negativen Konstanten!}
-	\FalseQuestionE{Mit der MIMA können wir Zufallszahlen erzeugen.}{Die MIMA arbeitet rein deterministisch und damit ohne jeden Zufall. 
-		\vspace{-.8\baselineskip}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.6]{xkcd/random_number} \\
-			%\vspace{-7pt}
-			{\url{http://xkcd.com/221}}
-		\end{figure}
-	}
-\end{frame}
+%\begin{frame}[t]{Wahr oder falsch?}
+%	\Socrative
+%	\FalseQuestionE{$\memwrite(m,a,v) \in \Val$.}{$\memwrite(m,a,v) \in \Val^\Adr$.}
+%	\FalseQuestionE{$\memread(\memwrite(m,a,v), a) = m(a)$ \quad für alle $m,a,v$.}{$\memread(\memwrite(m,a,v), a) = v$.}
+%	\FalseQuestionE{Im IR wird die Adresse des aktuellen Befehls gespeichert.}{Das geschieht im IAR – Im IR steht der Befehl selbst.}
+%	%\TrueQuestionE{Die Befehlsholphase ist jede Ausführungsrunde identisch.}{}
+%	\TrueQuestionE{Ein MIMA-Programm, welches von $-1$ abwärts zählt, kommt \\ irgendwann bei null raus.}{Unterlauf: Nach $-2^{23}$ kommt $2^{23}-1$.}
+%\end{frame}
 
-%\input{../Bloecke/MIMA.tex}
+%\begin{frame}[t]{Wahr oder falsch?}
+%	\FalseQuestionE{Der Akku führt bei der MIMA Berechnungen aus.}{Das macht die ALU. Im Akku wird das letzte Ergebnis zwischengespeichert.}
+%	\FalseQuestionE{LDC $-5$ lädt $-5$ in den Akku.}{LDC funktioniert nicht mit negativen Konstanten!}
+%	\FalseQuestionE{Mit der MIMA können wir Zufallszahlen erzeugen.}{Die MIMA arbeitet rein deterministisch und damit ohne jeden Zufall. 
+%		\vspace{-.8\baselineskip}
+%		\begin{figure}[H]
+%			\centering
+%			\includegraphics[scale=0.6]{xkcd/random_number} \\
+%			%\vspace{-7pt}
+%			{\url{http://xkcd.com/221}}
+%		\end{figure}
+%	}
+%\end{frame}
+
+\input{../Bloecke/MIMA.tex}
 
 \begin{frame}{Noch offen: Klammerausdrücke}
 	A long, long time ago, in a land far away:\\
@@ -80,22 +136,26 @@
 \input{../Bloecke/Grammatiken.tex}
 
 % Nicht unbed. nötig. Je nach Zeitbudget.
-\input{../Bloecke/Relationen2.tex}
+%\input{../Bloecke/Relationen2.tex}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
 			%\item Mehr Eigenschaften von Relationen
+			\item Was die MIMA ist
+			\item Wie man Programme in der MIMA schreibt
 			\item Was eine kontextfreie Grammatik ist
-			\item Wie man Sprachen mit Grammatiken beschreiben kann
-			\item Welche Eigenschaften Relationen haben können
+			%\item Wie man Sprachen mit Grammatiken beschreiben kann
+			%\item Welche Eigenschaften Relationen haben können
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
+			\item Wie man Sprachen mit Grammatiken beschreiben kann
 			\item Noch mehr Grammatiken
-			\item Nachts sind alle Katzen grau -- Prädikatenlogik
+			\item Mehr Eigenschaften von Relationen
+			%\item Nachts sind alle Katzen grau -- Prädikatenlogik
 			%\item Algorithmen: Kochrezepte der Informatik
 		\end{itemize}
 	\end{block}

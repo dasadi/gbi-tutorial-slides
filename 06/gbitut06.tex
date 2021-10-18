@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-%\newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -10,80 +10,96 @@
 \begin{document}
 \starttut{6}
 
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#4}
+	\begin{itemize}[<+->]
+		\item Ist noch nicht fertig korrigiert, sorry dafür!
+		\item Kommt in den nächsten Tagen
+	\end{itemize}
+\end{frame}
 
 %\thasse{\lastframe{0.65}{25}{xkcd/advent_calendar.png}{https://www.xkcd.com/994/}}
 
-\begin{frame}{Übungsschein-/Klausuranmeldung}
-	\centering \Large Übungsschein- und Klausuranmeldung sind freigeschaltet! \\
-	\bigskip
-	\Impl \textbf{ANMELDEN}! \textbf{Rechtzeitig}! Am besten \textbf{sofort}, falls man jetzt schon weiß, dass man die Klausur schreibt. \\
-	\bigskip
-	(Übungsschein sowieso anmelden, weil nix zu verlieren!)
+%\begin{frame}{Übungsschein-/Klausuranmeldung}
+%	\centering \Large Übungsschein- und Klausuranmeldung sind freigeschaltet! \\
+%	\bigskip
+%	\Impl \textbf{ANMELDEN}! \textbf{Rechtzeitig}! Am besten \textbf{sofort}, falls man jetzt schon weiß, dass man die Klausur schreibt. \\
+%	\bigskip
+%	(Übungsschein sowieso anmelden, weil nix zu verlieren!)
+%\end{frame}
+
+ \framePrevEpisode
+
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-6-einstieg/8fcb5877-e3d1-4099-b6ef-c0d8193d1ef7}
+	\end{itemize}
 \end{frame}
 
-\framePrevEpisode
+%\begin{frame}[t]{Wahr oder falsch?} 
+%		% Socrative: https://b.socrative.com/teacher/#import-quiz/31589970
+%		
+%		\Socrative
+%		\TrueQuestionE{$\forall x \in \Z: \quad x \mod 2 = 0 \iff x \text{ ist gerade}$.}{ $\text{Und auch: \quad} x \mod 2 = 1 \iff \text{x ist ungerade}$.}
+%		\FalseQuestionE{$4 \cdot (x \div 4) = x$.}{ $ 4 \cdot (x \div 4) + (x \mod 4) = x$}
+%		% \TrueQuestionE{$\left(\{\word a\}^\ast\cdot \{\word b,\eps\}\right)^\ast = \{\word a,\word b\}^\ast$}{}  % not fitting here
+%		% \FalseQuestionE{Jede Abbildung besitzt eine Umkehrabbildung.}{ Nur bijektive Abbildungen besitzen eine Umkehrabbildung.}  % ditto
+%		% \TrueQuestionE{Für jede Abbildung können wir das Urbild angeben.}{}  % ditto
+%		\TrueQuestionE{Das Zweierkomplement ist gut zum Rechnen.}{(Für den Rechner schon!)}
+%		\FalseQuestionE{Für jede Codierung gilt $h(\eps) = \eps$.}{Das muss nur für Homomorphismen gelten.}
+%		\FalseQuestion{Jeder Homomorphismus ist präfixfrei.}
+%		\TrueQuestion{Jede Huffman-Codierung ist präfixfrei.}
+%		\FalseQuestionE{Jeder $\eps$-freie Homomorphismus ist präfixfrei.}{ Aber: Jeder präfixfreie Homomorphismus ist $\varepsilon$-frei.}		
+%		\TrueQuestionE{Präfixfreie Codes sind einfach zu decodieren.}{}
+%\end{frame}
 
-\begin{frame}[t]{Wahr oder falsch?} 
-		% Socrative: https://b.socrative.com/teacher/#import-quiz/31589970
-		
-		\Socrative
-		\TrueQuestionE{$\forall x \in \Z: \quad x \mod 2 = 0 \iff x \text{ ist gerade}$.}{ $\text{Und auch: \quad} x \mod 2 = 1 \iff \text{x ist ungerade}$.}
-		\FalseQuestionE{$4 \cdot (x \div 4) = x$.}{ $ 4 \cdot (x \div 4) + (x \mod 4) = x$}
-		% \TrueQuestionE{$\left(\{\word a\}^\ast\cdot \{\word b,\eps\}\right)^\ast = \{\word a,\word b\}^\ast$}{}  % not fitting here
-		% \FalseQuestionE{Jede Abbildung besitzt eine Umkehrabbildung.}{ Nur bijektive Abbildungen besitzen eine Umkehrabbildung.}  % ditto
-		% \TrueQuestionE{Für jede Abbildung können wir das Urbild angeben.}{}  % ditto
-		\TrueQuestionE{Das Zweierkomplement ist gut zum Rechnen.}{(Für den Rechner schon!)}
-		\FalseQuestionE{Für jede Codierung gilt $h(\eps) = \eps$.}{Das muss nur für Homomorphismen gelten.}
-		\FalseQuestion{Jeder Homomorphismus ist präfixfrei.}
-		\TrueQuestion{Jede Huffman-Codierung ist präfixfrei.}
-		\FalseQuestionE{Jeder $\eps$-freie Homomorphismus ist präfixfrei.}{ Aber: Jeder präfixfreie Homomorphismus ist $\varepsilon$-frei.}		
-		\TrueQuestionE{Präfixfreie Codes sind einfach zu decodieren.}{}
+
+\begin{frame}{Rückblick: Codierungen}
+	\begin{itemize}[<+->]
+		\item Codierung: Injektive Abbildungs (oft, aber nicht immer Homomorphismen)
+		\item Homomorphismus $h:A^*\rightarrow B^*$: strukturerhaltende Abbildung ($\forall x,y\in A^*:h(x\cdot y) = h(x)\cdot h(y)$)
+		\item $h$ heißt $\eps$-frei gdw. $\forall x\in A^1:h(x)\not = \eps$
+		\item $h$ heißt präfixfrei gdw. für keine $x_1,x_2\in A^1$ gilt :$ h(x_1) \text{ ist Präfix von } h(x_2)$
+		\implitem präfixfreie Homomorphismen sind $\eps$-frei und injektiv (also Codierungen!)
+%		\item Huffman-Codierungen: Präfixfreie Codes mit optimaler Länge
+	\end{itemize}
 \end{frame}
 
+\input{../Bloecke/Huffmann}
 
-
-\mycomment{  % Not necessary here
-	\begin{frame}{Rückblick: Codierungen}
-		\begin{itemize}
-			\item Codierungen: Injektive Abbildungen (meist Homomorphismen)
-			\item $\eps$-Freiheit, Präfixfreiheit
-			\item Einfaches Decodieren für präfixfreie Homomorphismen
-			\item Huffman-Codierungen: Präfixfreie Codes mit optimaler Länge
-		\end{itemize}
-	\end{frame}
-}
-
-
-
-%\input{../Bloecke/Huffmann}
+\input{../Bloecke/Zweierkomplement.tex}
 
 %% Inhalt
 
 \input{../Bloecke/Speicher.tex}
 
-\input{../Bloecke/MIMA.tex}
+% next time: \input{../Bloecke/MIMA.tex}
 
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
-			%\item Wie die Huffman-Codierung funktioniert
-			\item Speicher
+			\item Wie die Huffman-Codierung funktioniert
+			\item Wie man ganze Zahlen ins Zweierkomplement umrechnet
+			\item Was man in der theoretischen Informatik unter Speicher versteht
 			\item Abbildungen, die Abbildungen auf Abbildungen abbilden!
-			\item Wie ein einfacher Prozessor aufgebaut ist
-			\item Wie man die MIMA für einfache Aufgaben nutzt
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
-			%\item MIMA – Den Bits beim Arbeiten zuschauen
-			\item Grammatiken – mehr als Subjekt, Objekt, Prädikat
+			\item MIMA und Prozessoren – Den Bits beim Arbeiten zuschauen
+			%\item Grammatiken – mehr als Subjekt, Objekt, Prädikat
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\xkcdframevert{676}{Danke für eure Aufmerksamkeit! \smiley}{2.5}
+\xkcdframevert{835}{Danke für eure Aufmerksamkeit! \smiley}{2.5}
 \slideThanks
 
 \end{document}

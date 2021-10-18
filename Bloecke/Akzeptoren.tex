@@ -87,25 +87,27 @@
 		\end{tikzpicture}
 	\end{center}
 	\pause
-	Gebt einen Akzeptor an, der die Sprache aller geraden Binärzahlen erkennt. 
-	\pause ($= \set{\word 0,\word 1}^* \* \set{\word 0}$) \\
-	%\vspace{-2\baselineskip}
-	\begin{center}
-		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=1.8cm,
-		semithick,initial text={}]
-		\tikzstyle{every state}=[]
-		
-		\node[initial, state] (A)                    {$a$};
-		\node[state, accepting] (B) [right of=A] {$b$};
-		
-		\path
-		(B) edge [loop above] node  {\word 0}  (B)
-			edge [bend right=7] node [above] {\word 1} 		  (A)
-		(A) edge [loop above] node  {\word 1}		  (A)
-			edge [bend right=7] node [below] {\word 0} (B)
-		;
-		\end{tikzpicture}
-	\end{center} 
+	\begin{block}{Bonusaufgabe}
+		Gebt einen Akzeptor an, der die Sprache aller geraden Binärzahlen erkennt. 
+		\pause ($= \set{\word 0,\word 1}^* \* \set{\word 0}$) \\
+		%\vspace{-2\baselineskip}
+		\begin{center}
+			\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=1.8cm,
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial, state] (A)                    {$a$};
+			\node[state, accepting] (B) [right of=A] {$b$};
+			
+			\path
+			(B) edge [loop above] node  {\word 0}  (B)
+				edge [bend right=7] node [above] {\word 1} 		  (A)
+			(A) edge [loop above] node  {\word 1}		  (A)
+				edge [bend right=7] node [below] {\word 0} (B)
+			;
+			\end{tikzpicture}
+		\end{center} 
+	\end{block}
 \end{frame}
 
 \begin{frame}{Aufgabe}
@@ -124,18 +126,18 @@
 	}
 \end{frame}
 
-\begin{frame}{Aufgabe}
+\begin{frame}{Bonusaufgabe}
 	\begin{enumerate}[a)]
 		\item Zeichnet einen möglichst kleinen endlichen Akzeptor mit $ X = \{\word a, \word b\}$, der alle Wörter akzeptiert, bei denen die Anzahl der $\word a$ durch $5$ teilbar ist.
 		\item Zeichnet einen Akzeptor mit $ X = \{\word a,\word b\}$, der alle Wörter akzeptiert, in denen nirgends hintereinander zwei $\word b$ vorkommen.
 	\end{enumerate}		
 \end{frame}
 
-\begin{frame} {Lösung a)}
+\begin{frame} {Lösung Bonusaufgabe a)}
 	\begin{figure}[H] \includegraphics[scale=0.5]{automaten/Akzeptor1.pdf} \end{figure}		
 \end{frame} 
 
-\begin{frame}{Lösung b)}
+\begin{frame}{Lösung Bonusaufgabe b)}
 	\begin{figure}[H] \includegraphics[scale=1.5]{automaten/Akzeptor2.pdf} \end{figure}
 \end{frame}
 

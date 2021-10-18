@@ -4,22 +4,16 @@
 
 \subsection{Motivation}
 \begin{frame}{Laufzeiten}
-	Wir interessieren uns für Laufzeiten von Algorithmen.\\
-	Aber wie sollen wir die messen?\\ \pause
-	Problem: Rechenzeit auf einem Supercomputing-Cluster nicht mit Rechenzeit auf einem IoT-Chip in der Waschmaschine vergleichbar.\\
-	
-	\bigskip \pause
-	Daher: Zählen der \enquote{ausgeführten Operationen} in Abhängigkeit von der Problemgröße $n$.\\
-	Meistens interessiert vor allem der Worst-Case.
-\end{frame}
-
-\begin{frame}{Abschätzung}
-	Genaue Abschätzungen sind oftmals \textit{sehr schwierig}.\\
-	Aber oftmals auch \textit{sehr uninteressant}.\\
-	Konstante Faktoren z.B. sind durch die ständigen Verbesserungen bei Prozessoren oftmals für die Praxis irrelevant.\\
-	
-	\bigskip \pause
-	Uns interessiert vor allem das Verhalten für \textit{sehr große} Instanzen.
+	Wir interessieren uns für Laufzeiten von Algorithmen.
+	\pause
+	\begin{itemize}
+		\item Aber wie sollen wir die messen?
+		\item Problem: Rechenzeit auf einem Supercomputing-Cluster nicht mit Rechenzeit auf einem IoT-Chip in der Waschmaschine vergleichbar
+		\implitem Zählen der \enquote{ausgeführten Operationen} in Abhängigkeit von der Problemgröße $n$
+		\item Noch ein Problem: Genaue Anzahlen sind seeehr schwierig zu bestimmen...
+		\item[] ... und in vielen Fällen auch irrelevant
+		\implitem konstante Faktoren ignorieren!
+	\end{itemize}
 \end{frame}
 
 %% -----------------------------------------------------------------------------
@@ -100,17 +94,20 @@
 \end{frame}
 
 
-\setbeamercolor{background canvas}{bg=}
-\includepdf[pages=15]{U11.pdf}
+%\setbeamercolor{background canvas}{bg=}
+%\includepdf[pages=15]{U11.pdf}
 
+\mycomment{ % let's not even teach them that this exists. Mentioning it in the lecture is enough
 \begin{frame}{Eine katastrophale Schreibweise}
 	Manchmal (häufig) sieht man auch das, \textbf{NICHT VERWENDEN}:
 	$$f = \Theta(g) \qquad h = \Oh{n^3} \qquad k = \Omega(f + g)$$
 	\pause
 	Dabei das „$=$“ immer als „$\in$“ lesen!
 \end{frame}
+}
 
-\begin{frame}{}
+\begin{frame}[t]{} % fake title
+	\fakeframetitle{Aufgabe: Inklusionen}
 	Ordnet folgende Funktionen nach asymptotischem Wachstum an:
 	\begin{itemize}
 		\item Identität $f(x) = x$
@@ -246,7 +243,10 @@
 		\item $O(f_1) + O(f_2) = O(f_1 + f_2)$
 		\item Wenn $g \in O(f)$, dann ist auch $O(g) \subseteq O(f)$ und $O(f + g) = O(f)$
 	\end{itemize}
-	
+
+	\begin{block}{Kurze Aufgabe}
+		Zeigt mit den Rechenregeln: Wenn $g\preceq f$, $h \succeq f$ und $h\in\Oh{g}$, dann ist $f \asymp g \asymp h$.
+	\end{block}
 \end{frame}
 
 % TODO Aufgaben !!!!

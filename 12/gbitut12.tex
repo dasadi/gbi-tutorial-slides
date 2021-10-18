@@ -6,7 +6,7 @@
 % - Bessere Hinleitung zu Akzeptoren
 
 % Comment/uncomment this line to toggle handout mode
-%\newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -15,6 +15,31 @@
 \begin{document}
 \starttut{12}
 
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#10}
+	Bisheriger Schnitt: \quad 15.6 / 21~P
+
+	\begin{itemize}
+		\item Sehr schöne Abgaben!
+		\item 15 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
+		\item Wenn ihr Fragen habt, meldet euch bei mir
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#10}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item[1c)] ``\textit{Tipp. } Um eine Aussage der Form $A \rightarrow B$ zu zeigen, kann es manchmal praktischer sein, es stattdessen für $(\alnot B) \rightarrow (\alnot A)$''
+		\item Kontraposition: die Formeln $A \rightarrow B$ und $(\alnot B) \rightarrow (\alnot A)$ sind logisch äquivalent.
+		\item $A \rightarrow B$ und $(\alnot A) \rightarrow (\alnot B)$ sind in der Regel \textbf{nicht} logisch äquivalent!
+		\item[2a)] Graphen stellen Knoten durch Kreise dar. Wenn ein Knoten ein Paar repräsentiert, schreibt man das Paar mit seinen Klammern.
+		\item[2d)] Nicht jede bijektive Funktion ist ein Homomorphismus.
+	\end{itemize}
+\end{frame}
+
+\mycomment{ % keine Probeklausur im WS20/21
 \daniel{
 \begin{frame}{Probeklausur}
 	\daniel{Schnitt: \quad \thassedaniel{XX}{22.8}~/~38~P \quad $\hat{=}$ Note \thassedaniel{XX}{3.2} \\}
@@ -66,10 +91,21 @@
 		\end{itemize}
 	\end{frame}
 }
-
+}
 
 \framePrevEpisode
 
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-12-einstieg/b0828b50-3aba-45b9-90ac-d39d64ec7ce6}
+	\end{itemize}
+\end{frame}
+
+\mycomment{
 \begin{frame}{Rückblick: Laufzeitabschätzungen}
 	\begin{itemize}[<+->]
 		\item Asymptotisches Wachstum
@@ -122,16 +158,19 @@
 		g$ und es gilt \textbf{erst recht nicht} $f\asymp g$.
 	}
 \end{frame}
+}
 
+\input{../Bloecke/GrossO}
 
 \input{../Bloecke/MasterTheorem}
 
 \input{../Bloecke/Automaten}
 
-\input{../Bloecke/Akzeptoren}
+% next time \input{../Bloecke/Akzeptoren}
 
 % ---------
 
+\mycomment{
 % WiSe 10/11 Aufgabe 6 c 
 \begin{frame}{Übung: Akzeptoren}
 	Die Sprache $L\subseteq \{\word a,\word b\}^\ast $ sei definiert als die Menge aller Wörter $w$, die folgende Bedingungen erfüllen:
@@ -159,21 +198,24 @@
 		\includegraphics[width=0.7\linewidth]{automaten/Loesung2.pdf}
 	\end{figure}
 \end{frame}
+}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
+			\item Wie man die Laufzeit von Algorithmen misst
 			\item Wie man rekursive Laufzeiten mastert
 			\item Endlich: Automaten!
-			\item ... und wie man damit Wörter akzeptiert/ablehnt
 		\end{itemize}
 	\end{block}
 	
-	\begin{block}{Was die nächsten Male kommt}
+	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
-			\item Nicht immer so vulgär: Reguläre Ausdrücke
-			\item Rechtslineare Grammatiken
+			\item Mehr zu Automaten
+			\item ... und wie man damit Wörter akzeptiert/ablehnt
 			\item Turingmaschinen
+			%\item Ein Regelwerk für einen Ausdruck -- Reguläre Ausdrücke
+			%\item Rechtslineare Grammatiken
 			%\item Turingmaschinen -- mächtiger wird es nicht mehr!
 		\end{itemize}
 	\end{block}

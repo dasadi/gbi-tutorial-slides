@@ -9,9 +9,13 @@
 		\item und gibt dabei ein Wort als Ausgabe aus
 	\end{itemize}
 
-	Die gültigen \enquote{Zustandswechsel} sind als Zustandsübergänge definiert.
+	Die gültigen \enquote{Zustandswechsel} sind als Zustandsübergänge definiert.\\
+	\begin{block}{}
+		Solche ``DEAs'' kann beispielsweise zum Simulieren von Getränkeautomaten oder auch zur Textsuche und -ersetzung verwenden.
+	\end{block}
 \end{frame}
 
+\mycomment{ % not enough for its own frame
 \begin{frame}{Anwendungen}
 	\begin{itemize}
 		\item Getränkeautomaten
@@ -21,6 +25,7 @@
 
 	Für Beispiele zur Textsuche und Textersetzung: Übung~12, WS~15/16
 \end{frame}
+}
 
 \mycomment{ % As a source for copy/pasting:
 \begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
@@ -45,7 +50,8 @@ semithick,initial text={}]
 \end{tikzpicture}	
 }
 
-\subsection{Mealy-Automaten}
+%\subsection{Mealy-Automaten}
+\mycomment{ % see frame below for introduction with moore
 \begin{frame}{Ein einfacher Automat}
 	\begin{center}
 		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
@@ -71,7 +77,36 @@ semithick,initial text={}]
 	\impl Der Automat negiert das Eingabewort bitweise. \\
 	(Frisst er ne \word 2, so isser beleidigt. \smiley)
 \end{frame}
+}
 
+\subsection{Moore-Automaten}
+\begin{frame}{Ein einfacher Automat}
+	\begin{center}
+		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial,state] (A)                    {$a\io$ \smiley};
+			\node[state]         (M) [right of=A] 	    {$m\io$ \frownie};
+			
+			\path (A) edge [loop above] node {$\word 1$} (A)
+			          edge [loop below]  node {$\word 0$} (A)
+			          edge 					  node {$\word{2}$} (M)
+			      (M) edge [loop right] node {$\word{0}, \word{1}, \word{2}$} (M);
+			      %(M) edge [loop right] node {\word 1|\word X} (M)
+			      %(M) edge [loop below] node {\word 2|\word X} (M);
+		\end{tikzpicture}
+	\end{center}
+	\pause
+	Eingabe: \word{011101} \?> Ausgabe: \word{\smiley\smiley\smiley\smiley\smiley\smiley} \\
+	Eingabe: \word{011102} \?> Ausgabe: \word{\smiley\smiley\smiley\smiley\smiley\frownie} \\
+	Eingabe: \word{012101} \?> Ausgabe: \word{\smiley\smiley\frownie\frownie\frownie\frownie} \\ \pause
+	\smallskip
+	\impl Der Automat prüft, ob die Eingabe nur aus binären Ziffern besteht. \\
+	(Frisst er ne \word 2, so isser beleidigt. \frownie)
+\end{frame}
+
+\mycomment{ % i can't do this any moore
 \begin{frame}{Mealy-Automat}
 	Bei einem Mealy-Automaten findet die Ausgabe \textbf{bei den Zustandsübergängen} statt.
 	\begin{Definition}
@@ -86,7 +121,24 @@ semithick,initial text={}]
 		\end{itemize}						
 	\end{Definition}
 \end{frame}
+}
 
+\begin{frame}{Moore-Automat}
+	Bei einem Moore-Automaten findet die Ausgabe \textbf{in den Zuständen} statt.
+	\begin{Definition}
+		Ein \textbf{Moore-Automat} $ A = (Z,z_0,X,f,Y,g)$ besteht aus...
+		\begin{itemize}
+			\item einer endlichen Zustandsmenge $Z$ 
+			\item einem Startzustand $z_0 \in Z$
+			\item einem Eingabealphabet $X$ 
+			\item einer Zustandsübergangsfunktion $f \from Z\times X \functionto Z $
+			\item einem Ausgabealphabet $Y$
+			\item einer Ausgabefunktion $h \from Z \functionto Y^* $ 
+		\end{itemize}						
+	\end{Definition}
+\end{frame}
+
+\mycomment{ % another one
 \begin{frame}{}
 	\begin{block}{Graphische Darstellung}
 		\begin{itemize}
@@ -99,11 +151,33 @@ semithick,initial text={}]
 		
 	\end{block}
 \end{frame}
+}
 
+\begin{frame}{Moore-Automat}
+	\begin{block}{Graphische Darstellung}
+		\begin{itemize}
+			\item Oft malt man Automaten hin. (Achtung: Die formale Schreibweise wird trotzdem auch im Studium verwendet! Also auswendig lernen!)
+			\item Zustände sind \textbf{Knoten} und Übergänge sind \textbf{gerichtete Kanten} in einem Graphen.
+			\item[] Knotenbeschriftung: „$\langle\text{Zustand}\rangle | \langle\text{Ausgabe}\rangle$“
+			\item[] Kantenbeschriftung: „Eingabe“ des Übergangs
+			\item \textbf{Der Startzustand wird mit einem Pfeil \enquote{aus dem Nichts} gekennzeichnet!}  \pause
+			\implitem \textbf{NICHT VERGESSEN!} Kostet sonst Punkte! \textbf{Immer!}
+		\end{itemize}
+		
+	\end{block}
+\end{frame}
+
+\mycomment{ % mealy no
 \begin{frame}{Beispiel: Automatengraphen}
 	%\vspace{-1\baselineskip} 
 	%\hspace{-\baselineskip}
 	\includegraphics[page=3,trim=18px 47px 18px 14px,clip]{U12.pdf}	
+\end{frame}
+}
+
+% moore yes
+\begin{frame}{Beispiel Moore-Automat}
+	\includegraphics[page=11,trim=18px 47px 18px 13px,clip]{U12.pdf}	
 \end{frame}
 
 %% Übung: Beispiel
@@ -169,17 +243,19 @@ semithick,initial text={}]
 
 \begin{frame}{Beispiel $f, f_*, f_{**}$}
 	\begin{center}
-			\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
-		semithick,initial text={}]
-		\tikzstyle{every state}=[]
-		
-		\node[initial,state] (A)                    {$a$};
-		\node[state]         (M) [right of=A] 	    {$m$};
-		
-		\path (A) edge [loop above] node {$\word 1\io\word 0$} (A)
-		edge [loop below]  node {$\word 0\io\word 1$} (A)
-		edge 					  node {$\word{2}\io\word{X}$} (M)
-		(M) edge [loop right] node {$\stackedtight{\word 0\io\word X \\ \word 1\io\word X \\ \word 2\io\word X}$} (M);
+		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial,state] (A)                    {$a\io$ \smiley};
+			\node[state]         (M) [right of=A] 	    {$m\io$ \frownie};
+			
+			\path (A) edge [loop above] node {$\word 1$} (A)
+			          edge [loop below]  node {$\word 0$} (A)
+			          edge 					  node {$\word{2}$} (M)
+			      (M) edge [loop right] node {$\word{0}, \word{1}, \word{2}$} (M);
+			      %(M) edge [loop right] node {\word 1|\word X} (M)
+			      %(M) edge [loop below] node {\word 2|\word X} (M);
 		\end{tikzpicture}
 	\end{center}
 	\begin{align*}
@@ -198,6 +274,7 @@ semithick,initial text={}]
 	\end{align*}
 \end{frame}
 
+\mycomment{ % we dont do that here
 \begin{frame}{Ausgaben}
 	Automaten können ja was ausgeben. \\
 	\smallskip
@@ -222,41 +299,69 @@ semithick,initial text={}]
 	%\pause Dies gibt nun nicht die durchlaufenen Zustände bzw. den Abschlusszustand an, sondern die letzte Ausgabe bzw. alle durchlaufenen Ausgaben. 
 
 \end{frame}
+}
+
+\begin{frame}{Ausgaben}
+	Automaten können ja was ausgeben. \\
+	\smallskip
+	Erinnerung: Die Knoten sind beschriftet mit $z \io y$ , wobei $z\in Z$ und $y\in Y^* $. \\
+	 \impl Beim Betreten von Zustand $z$ wird das Wort $y$ ausgegeben. \\ 
+	Formal: $$h(z) = y$$
+\end{frame}
+
+\begin{frame}{Ausgabefunktionen}
+	\begin{block}{Ausgabefunktion extended}
+		Wir können also analog zu $f_*$ und $f_{**}$ definieren
+		\begin{threealign}
+		\text{Für die letze Ausgabe: } \qquad g_* : Z\times X^* &\functionto& Y^* \\
+		g_*(z,w) &=& h(f_*(z,w)) \\
+		\text{Für das ganze Ausgabewort: } \qquad g_{**} : Z\times X^* &\functionto& Y^* \\ 
+		g_{**}(z,w) &=& h^{**}(f_{**}(z,w)) \\
+		\end{threealign} 
+		Dabei ist $h^{**}\from Z^*\functionto Y^*$ der durch $h$ induzierte Homomorphismus!
+	\end{block}
+	
+	%\pause Dies gibt nun nicht die durchlaufenen Zustände bzw. den Abschlusszustand an, sondern die letzte Ausgabe bzw. alle durchlaufenen Ausgaben. 
+
+\end{frame}
 
 \begin{frame}{Beispiel $g, g_*, g_{**}$}
 	\begin{center}
 		\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
-		semithick,initial text={}]
-		\tikzstyle{every state}=[]
-		
-		\node[initial,state] (A)                    {$a$};
-		\node[state]         (M) [right of=A] 	    {$m$};
-		
-		\path (A) edge [loop above] node {$\word 1\io\word 0$} (A)
-		edge [loop below]  node {$\word 0\io\word 1$} (A)
-		edge 					  node {$\word{2}\io\word{X}$} (M)
-		(M) edge [loop right] node {$\stackedtight{\word 0\io\word X \\ \word 1\io\word X \\ \word 2\io\word X}$} (M);
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial,state] (A)                    {$a\io$ \smiley};
+			\node[state]         (M) [right of=A] 	    {$m\io$ \frownie};
+			
+			\path (A) edge [loop above] node {$\word 1$} (A)
+			          edge [loop below]  node {$\word 0$} (A)
+			          edge 					  node {$\word{2}$} (M)
+			      (M) edge [loop right] node {$\word{0}, \word{1}, \word{2}$} (M);
+			      %(M) edge [loop right] node {\word 1|\word X} (M)
+			      %(M) edge [loop below] node {\word 2|\word X} (M);
 		\end{tikzpicture}
 	\end{center}
 	\vspace{-\baselineskip}
 	\begin{align*}
-	g(a, \word 2) &= \word X \\
-	g(a, \word 0) &= \word 1 \\ 
+	g(a, \word 2) &= \word \frownie \\
+	g(a, \word 0) &= \word \smiley \\ 
 	\end{align*}
 	\pause  \vspace{-2.5\baselineskip}
 	\begin{align*}
-	g_*(a, \word{101}) &= \hphantom{\word{01}}\word 0 \\
-	g_{**}(a, \word{101}) &= \word{010} \\ 
+	g_*(a, \word{101}) &= \hphantom{\word{\smiley\smiley}}\word \smiley \\
+	g_{**}(a, \word{101}) &= \word{\smiley\smiley\smiley} \\ 
 	\end{align*}
 	\pause  \vspace{-2.5\baselineskip}
 	\begin{align*}
-	g_*(a, \word{1021}) &= \hphantom{\word{01X}}\word X \\
-	g_{**}(a, \word{1021}) &= \word{01XX} \\ 	\visible<+->{}
-	\visible<+->{g_*(m, \word{0110}) &= }\visible<+->{\word X}
+	g_*(a, \word{1021}) &= \hphantom{\word{\smiley\smiley\frownie}}\word \frownie \\
+	g_{**}(a, \word{1021}) &= \word{\smiley\smiley\frownie\frownie} \\ 	\visible<+->{}
+	\visible<+->{g_*(m, \word{0110}) &= }\visible<+->{\word \frownie}
 	\end{align*}
 \end{frame}
 
 
+\mycomment{ % no need to declare differences if we only have one
 \subsection{Moore-Automat}
 \begin{frame}{Moore-Automat}
 	Moore-Automaten sind fast genauso aufgebaut wie Mealy-Automaten.\\ \smallskip
@@ -296,13 +401,16 @@ semithick,initial text={}]
 	Für $g_{**}$ gilt dann mit $h^{**}\from Z^*\functionto Y^*$ \quad (der durch $h$ induzierte Hom.!)  $$ g_{**}(z,w) = h^{**} (f_{**}(z,w)) $$
 	Wir wenden also $h$ auf jeden durchlaufenen Zustand an.
 \end{frame}
+}
 
 
+\mycomment{ % we already did this
 \begin{frame}{Beispiel Moore-Automat}
 	\includegraphics[page=11,trim=18px 47px 18px 13px,clip]{U12.pdf}	
 \end{frame}
+}
 
-
+\mycomment{% no mealy in WT20/21
 \begin{frame}{Umwandlung von Automaten: Moore $\leftrightsquigarrow$ Mealy}
 	\begin{block}{Von Moore zu Mealy}
 		Relativ straightforward.\\
@@ -357,12 +465,41 @@ semithick,initial text={}]
 	\draw[->] (A) to[out=-90,in=-76, looseness=1.94] (M) node [at start, below right = 48pt and 2pt] {\word 2}; %Fuck you, LaTeX. "midway" node option doesn't work at all. Beware: `below=48pt, right=2pt` doesn't seem to work anymore?! WTF!?
 	\end{tikzpicture}
 \end{frame}
+} % end mycomment
+
+\mycomment{ % for tut 13
+\begin{frame}{Aufgabe: Zeichen duplizieren}
+	\begin{block}{Aufgabe}
+		Malt einen Moore-Automaten, der für eine Eingabe $w \in \{\word{a},\word{b},\word{c}\}$ jedes Eingabezeichen ``verdoppelt'', also z.B. $\word{abac}$ wird zu $\word{aabbaacc}$ \\
+		\pause
+		\bigskip
+	\end{block}
+	%\vspace{-2\baselineskip}
+	\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=2.8cm,
+	semithick,initial text={}]
+	\tikzstyle{every state}=[]
+	
+	\node[initial,state] (1)                    {$1\io\word{aa}$};
+	\node[state]         (2) [right of=1] 	    {$2\io\word{bb}$};
+	\node[state]         (3) [right of=2] 	    {$3\io\word{cc}$};
+	
+	\path (1) edge [loop above] node {$\word a$} (1)
+			edge [bend left=12] node {$\word b$} (2)
+			edge [bend right=30] node {$\word c$} (3)
+		(2) edge [loop above] node {$\word b$} (2)
+			edge [bend left=12] node {$\word a$} (1)
+			edge [bend left=12] node {$\word c$} (3)
+		(3) edge [loop above] node {$\word c$} (3)
+			edge [bend left=36] node {$\word a$} (1)
+			edge [bend left=12] node {$\word b$} (2);
+	\end{tikzpicture}
+\end{frame}
 
 \begin{frame}{Aufgabe: Textersetzung mit Automaten}
 	\begin{block}{Aufgabe}
 		Geg.: \quad $w \in \set{\word a, \word b}^*$, wobei $w$ nicht auf ungerade viele \word{a} endet. \\
 		Wollen \word{aa} durch \word{ccc} ersetzen. \\
-		Malt einen Mealy-Automaten, der das leistet. \\
+		Malt einen Moore-Automaten, der das leistet. \\
 		\pause
 		\bigskip
 	\end{block}
@@ -385,7 +522,9 @@ semithick,initial text={}]
 	\Impl Beispiel:  $g_{**}(1, \word{babaabaa}) = \word{babcccbccc}$.
 	% Einschränkungen von oben mit ba und so nötig, weil sonst das letzte a nicht ausgegeben wird (möglicher Fix: Ein End-of-Input-Zeichen, das am Ende „aufräumt“)
 \end{frame}
+}
 
+\mycomment{
 \only<beamer:0>{
 
 \begin{headframe}[\daniel{Zu hässlich zum Wegwerfen}]
@@ -440,3 +579,4 @@ semithick,initial text={}]
 \setbeamercolor{background canvas}{bg=}
 \includepdf[pages={34-40}]{U12.pdf}
 }
+} % end mycomment

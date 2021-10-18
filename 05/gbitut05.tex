@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-% \newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -12,33 +12,72 @@
 
 % Zum Aufwärmen: PEBA Tutorenprogramm Aktivierung Code merken (PDF im gleichen Ordner zu finden)
 
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#3}
+	Schnitt: \quad 17,4 / 22~P
+
+	\begin{itemize}[<+->]
+		\item 19 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
+		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item Ihr habt alle pünktlich abgegeben :)
+		\item Sehr gute Abgaben, weiter so!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#3}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Formulierung: eine Formel \textit{ist} nicht wahr, sondern sie wird \textit{als wahr interpretiert}.
+		\item keine Begründungen angeben, wenn nicht gefordert
+		\item Aufgabe 3.4b): \textit{Wenn $G$ erfüllbar ist, dann ist $F$ unerfüllbar}
+		\implitem Widerlegen durch Gegenbeispiel:
+		\item[] Sei $F = P_0$ mit $P_0 \in Var_{AL}$.
+		\item[] Dann ist $G$ erfüllbar, denn für die Interpretation $I_1$ mit $I_1(P_0)=\F$ ist $val_{I_1}(G)=\W$.
+		\item[] Es ist aber auch $F$ erfüllbar, denn für die Interpretation $I_2$ mit $I_2(P_0)=\W$ ist $val_{I_2}(F)=\W$.
+		\implitem Dann sind $G$ und $F$ beide erfüllbar, was der Behauptung widerspricht.
+		\item Aufgabe 3.5d): Die Definition von Monotonie gibt keine Punkte!
+	\end{itemize}
+\end{frame}
+
  \framePrevEpisode
 
-
- 
-\begin{frame}{Rückblick}
-	Auf formale Sprachen können wir \textbf{ähnliche} Operationen anwenden wie auf Wörtern:
-	\begin{itemize}
-		\item $L_1 \cdot L_2 = \{w_1 w_2 \mid w_1 \in L_1 \text{ und } w_2 \in L_2 \}$\\
-		Jeweils ein Wort aus $L_1$ konkateniert mit einem Wort aus $L_2$.
-		\pause
-		\item $L^0 = \{\varepsilon \}, \qquad L^{i+1} = L^i \cdot L$\\
-		Alle Wörter, die aus $i = 0,1,2...$ Wörtern der Sprache zusammengesetzt wurden
-		\pause
-		\item $L^+ = \bigcup \limits_{i=1}^\infty L^i \qquad L^* = L^+ \cup L^0$\\
-		Alle Wörter, die sich aus den Wörtern der Sprache bilden lassen \\ 
-		(ohne/mit zusätzlichem $\eps$ als Würze).
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-5-einstieg/ae77276b-39ed-4196-9bf4-12a9f0bdad28}
 	\end{itemize}
-	Ein Alphabet selbst ist \textbf{auch} ne formale Sprache, nämlich mit Wörtern der Länge 1.
 \end{frame}
+ 
+%\begin{frame}{Rückblick}
+%	Auf formale Sprachen können wir \textbf{ähnliche} Operationen anwenden wie auf Wörtern:
+%	\begin{itemize}
+%		\item $L_1 \cdot L_2 = \{w_1 w_2 \mid w_1 \in L_1 \text{ und } w_2 \in L_2 \}$\\
+%		Jeweils ein Wort aus $L_1$ konkateniert mit einem Wort aus $L_2$.
+%		\pause
+%		\item $L^0 = \{\varepsilon \}, \qquad L^{i+1} = L^i \cdot L$\\
+%		Alle Wörter, die aus $i = 0,1,2...$ Wörtern der Sprache zusammengesetzt wurden
+%		\pause
+%		\item $L^+ = \bigcup \limits_{i=1}^\infty L^i \qquad L^* = L^+ \cup L^0$\\
+%		Alle Wörter, die sich aus den Wörtern der Sprache bilden lassen \\ 
+%		(ohne/mit zusätzlichem $\eps$ als Würze).
+%	\end{itemize}
+%	Ein Alphabet selbst ist \textbf{auch} ne formale Sprache, nämlich mit Wörtern der Länge 1.
+%\end{frame}
 
-\begin{frame}[t]{Wahr oder falsch?}
-	\FalseQuestionE{Jede Sprache enthält Wörter.}{ $\emptyset$ ist auch eine gültige Sprache.}
-	\FalseQuestionE{$\word{0}^* = \{\eps, \word{0}, \word{00}, \word{000}, ...\}$}{$\word{0}^*$ gibt es nicht, denn $\word{0} \neq \{\word{0}\}$.}
-	\TrueQuestionE{Es gibt Sprachen $L$, für die gilt $\eps \in L^+$.}{\ZB $L = \set{\eps, \word{aaa}}$.}
-	\FalseQuestionE{$L^+ = L^* \setminus L^0$.}{Gilt nicht, wenn $\varepsilon \in L$.}
-	\TrueQuestionE{$\{\}^* \neq \{\} $.}{ $\{\}^* = \{\varepsilon\}$.}	
-\end{frame}
+%\begin{frame}[t]{Wahr oder falsch?}
+%	\FalseQuestionE{Jede Sprache enthält Wörter.}{ $\emptyset$ ist auch eine gültige Sprache.}
+%	\FalseQuestionE{$\word{0}^* = \{\eps, \word{0}, \word{00}, \word{000}, ...\}$}{$\word{0}^*$ gibt es nicht, denn $\word{0} \neq \{\word{0}\}$.}
+%	\TrueQuestionE{Es gibt Sprachen $L$, für die gilt $\eps \in L^+$.}{\ZB $L = \set{\eps, \word{aaa}}$.}
+%	\FalseQuestionE{$L^+ = L^* \setminus L^0$.}{Gilt nicht, wenn $\varepsilon \in L$.}
+%	\TrueQuestionE{$\{\}^* \neq \{\} $.}{ $\{\}^* = \{\varepsilon\}$.}	
+%\end{frame}
+
+\input{../Bloecke/FormaleSprachenP2.tex}
 
 \input{../Bloecke/Darstellung}
 
@@ -70,7 +109,7 @@
 	Ja, es gilt $$Num_2(\word 1^\ell) = 2^\ell - 1$$ und allgemein \pause[7] $$Num_b\left({\underbrace{(b-1)}_{\text{\footnotesize $\in Z_b$ }}}^\ell\right) = b^\ell - 1$$
 \end{frame}
 
-\input{../Bloecke/Zweierkomplement.tex}
+%\input{../Bloecke/Zweierkomplement.tex}
 
 \begin{frame}{Von einer Zahlendarstellung zur Anderen}
 	\vspace{-.2\baselineskip}
@@ -96,20 +135,22 @@
 
 \input{../Bloecke/Codierungen.tex}
 
-\input{../Bloecke/Huffmann.tex}
+%\input{../Bloecke/Huffmann.tex}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
 			\item Wie man Zahlen anders darstellt
-			\item Wie man das Zweierkomplement bildet
+%			\item Wie man das Zweierkomplement bildet
 			\item Übersetzungen und Codierungen
-			\item Huffman-Codierung
+%			\item Huffman-Codierung
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
+			\item Huffman-Codierung -- möglichst viel Platz sparen
+			\item Zweierkomplement -- negative Binärzahlen
 			\item Speicher -- Damit wir nicht alles gleich wieder vergessen
 			\item MIMA -- Den Bits beim Arbeiten zuschauen
 		\end{itemize}

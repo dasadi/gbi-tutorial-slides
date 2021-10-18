@@ -4,16 +4,23 @@
 % https://www.youtube.com/watch?v=VxvY4rI15sM
 
 % Comment/uncomment this line to toggle handout mode
-% \newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
 \morescalingdelimiters
 
 \begin{document}
-\starttut{14}
+%\starttut{14}
 
 %\thasse{\lastframe{0.55}{20}{xkcd/turing_test.png}{https://www.xkcd.com/}}
+
+\title[GBI-Tutorium \mytutnumber, Woche 14]{Grundbegriffe der Informatik \\ Tutorium \mytutnumber}
+\date{22. Februar 2021}
+
+\begin{headframe}
+	GBI-Übungsstunde
+\end{headframe}
 
 \mycomment{
 \begin{frame}{Zu Blatt \#6}
@@ -35,9 +42,231 @@
 	\end{itemize}
 \end{frame}
 }
+%\framePrevEpisode
 
-\framePrevEpisode
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Wir spielen jetzt noch eine letzte Runde Kahoot!
+		\item Das heutige Quiz könnt ihr euch später nochmal anschauen: \\
+			\small \url{https://create.kahoot.it/share/gbi-ubungsstunde/f80350a3-4473-4080-aeaf-35f456ac2a19}
+		\item Alle anderen Kahoot!s sind in den entsprechenden Foliensätzen verlinkt
+	\end{itemize}
+\end{frame}
 
+% - Sprachen: für gegebene Sprachen: "Geben Sie für die folgenden Sprachen einen regulären Ausdruck an. Falls eine der Sprachen nicht regulär ist, geben Sie eine kontextfreie Grammatik dafür an und begründen Sie, warum diese Sprache nicht regulär ist.
+% - Akzeptoren: Geben Sie für jede reguläre Sprache aus der vorherigen Aufgabe einen endlichen Akzeptor an.
+% - Graphen: für gegebenen Graphen (i) Adjazenzmatrix und Wegematrix ablesen und (ii) den Graphen, der zur Wegematrix gehört, angeben. (iii) Geben Sie einen Graphen an, der nicht isomorph zum gegebenen Grapgen ist, dessen Erreichbarkeitsgraph aber isomporph zum Erreichbarkeitsgraph aus Teilaufgabe (ii) ist.
+% Es bezeichne ~ die Relation, die angibt ob zwei Graphen isomorph sind. Zeichen Sie, dass ~ eine Äquivalenzrelation ist.
+% - irgendwas mit induktiven Definitionen und vollständiger Induktion -- tut 05?
+% - Turingaufgabe
+% - feedback!
+
+\begin{frame}{Aufgabe 1: Sprachen}
+	\begin{block}{Aufgabe}
+		Gegeben seien die folgenden Sprachen:
+		\begin{itemize}
+			\item[] $L_1 = \left\{\word a^n\word b^m \quad \middle| \quad n,m\in\mathbb{N}_0, n>m\right\}$
+			\item[] $L_2 = \left\{\word a^n \word b^m \word c^o \quad \middle| \quad n,o\in\mathbb{N}_0, m\in\mathbb{N}_+\right\}$
+		\end{itemize}
+		\begin{itemize}
+			\item[a)] Geben Sie für $i\in\left\{1,2\right\}$ einen regulären Ausdruck $R_i$ an, sodass gilt: $\lang{R_i}=L_i$. \\
+				Falls eine der Sprachen nicht regulär ist, geben Sie eine kontextfreie Grammatik an, die diese Sprache erzeugt.
+			\item[b)] Geben Sie für jede reguläre Sprache $L_i$ ($i\in\left\{1,2\right\}$) einen endlichen Akzeptor $A_i$ an, der genau $L_i$ akzeptiert.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 1: Sprachen}
+	\begin{block}{Lösung a)}
+		\begin{itemize}
+			\item $G_1=(\{S,X\},\{\word{a}, \word{b}\},S, \{S \rightarrow \word{a}S\word{b}|X, X \rightarrow \word{a}X|\word{a}\})$
+			\item $R_2=\word{a}\ast\word{b}\word{b}\ast\word{c}\ast$
+		\end{itemize}
+	\end{block}
+	\begin{block}{Lösung b)}
+		\begin{center}
+			\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=15mm,
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial,state] (A)                    {$a$};
+			\node[state,accepting] (B)  [right of=A]     {$b$};
+			\node[state,accepting]		 (M)  [right of=B]		{$c$};
+			\node[state]		 (F)  [below of=B]		{$f$};
+			
+			\path
+			(A) edge [loop above]  node {\word a} (A) 
+			(A) edge 			  node {\word b} (B) 
+			(A) edge 			  node {\word c} (F) 
+			(B) edge [loop above]  node {\word b} (B) 
+			(B) edge 			  node {\word c} (M)
+			(B) edge 			  node {\word a} (F)
+			(M) edge [loop above] node {\word c} (M)
+			(M) edge 			  node {\word a, \word b} (F)
+			(F) edge [loop below] node {\word a, \word b, \word c} (F);
+			\end{tikzpicture}
+		\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 2: Graphen}
+	\begin{figure}[H]
+		\begin{tikzpicture}[->,>=stealth,baseline=-5mm]
+		\matrix[matrix of math nodes,nodes={draw,circle,minimum size=8mm,inner sep=2pt},row sep=10mm,column sep=10mm,ampersand replacement=\&]
+		{
+			|(1)| 1 \& |(3)| 3 \\
+			|(0)| 0 \& |(2)| 2 \\
+		};
+		\draw  (0) to [bend left] (1);
+		\draw  (1) to [bend left] (0);
+		\draw  (1) -- (2);
+		\draw  (2) -- (3);
+		\end{tikzpicture}
+	\end{figure}
+	\begin{block}{Aufgabe}
+		Gegeben seien der oben dargestellte Graph $G=(V,E)$. \\
+		\begin{itemize}
+			\item[a)] Geben Sie die Adjazenzmatrix $A$ und die Wegematrix $W$ von $G$ an.
+			\item[b)] Geben Sie einen gerichteten Graphen $G_W=(V,E_W)$  an, dessen Adjazenzmatrix $W$ ist.
+			\item[c)] Geben Sie einen schleifenfreien Graphen $G'=(V',E')$ an, der nicht zu $G$ isomorph ist, für den aber $G'_W=(V',E'_W)$ isomorph zu $G_W$ ist. \\
+				\textit{Dabei ist $G'_W$ analog zu b) der Graph, dessen Adjazenzmatrix die Wegematrix von $G'$ ist.}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 2: Graphen}
+	\begin{block}{Lösung a)}
+		\small $$ A = \begin{pmatrix}
+			0 & 1 & 0 & 0 \\
+			1 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1 \\
+			0 & 0 & 0 & 0
+		\end{pmatrix} \qquad \pause W = \begin{pmatrix}
+			1 & 1 & 1 & 1 \\
+			1 & 1 & 1 & 1 \\
+			0 & 0 & 1 & 1 \\
+			0 & 0 & 0 & 1 
+		\end{pmatrix} $$
+	\end{block}
+	\begin{block}{Lösung b)}
+		\begin{figure}[H]
+			\begin{tikzpicture}[->,>=stealth,baseline=-5mm]
+			\matrix[matrix of math nodes,nodes={draw,circle,minimum size=8mm,inner sep=2pt},row sep=10mm,column sep=10mm,ampersand replacement=\&]
+			{
+				|(1)| 1 \& |(3)| 3 \\
+				|(0)| 0 \& |(2)| 2 \\
+			};
+			\draw  (0) to [loop left] (0);
+			\draw  (0) to [bend left] (1);
+			\draw  (0) -- (2);
+			\draw  (0) -- (3);
+			\draw  (1) to [bend left] (0);
+			\draw  (1) to [loop left] (1);
+			\draw  (1) -- (2);
+			\draw  (1) -- (3);
+			\draw  (2) -- (3);
+			\draw  (2) to [loop right] (2);
+			\draw  (3) to [loop right] (3);
+			\end{tikzpicture}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 2: Graphen}
+	\begin{block}{Lösung c)}
+		\begin{figure}[H]
+			\begin{tikzpicture}[->,>=stealth,baseline=-5mm]
+			\matrix[matrix of math nodes,nodes={draw,circle,minimum size=8mm,inner sep=2pt},row sep=10mm,column sep=10mm,ampersand replacement=\&]
+			{
+				|(1)| 1 \& |(3)| 3 \\
+				|(0)| 0 \& |(2)| 2 \\
+			};
+			\draw  (0) to [bend left] (1);
+			\draw  (1) to [bend left] (0);
+			\draw  (1) -- (2);
+			\draw  (1) -- (3);
+			\draw  (2) -- (3);
+			\end{tikzpicture}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+\begin{headframe}{}
+	Feedback + kurze Pause \\
+	\small\url{https://5vuj7k3npj7.typeform.com/to/wn5gx2qp}
+\end{headframe}
+
+\begin{frame}{Aufgabe 3: Äquivalenzrelation}
+	\begin{block}{Aufgabe}
+		Sei $\mathcal{G}$ die Menge, die alle Graphen enthält.\\
+		\textit{(Wir ignorieren an dieser Stelle gekonnt, dass diese Definition keine Grundmenge hat)} \\
+		Sei $R\subseteq \mathcal{G} \times \mathcal{G}$ eine binäre Relation, für die für beliebige $G,H\in\mathcal{G}$ gilt: ``$(G,H)\in R \Leftrightarrow G \text{ ist isomorph zu } H$''. Zeigen Sie, dass $R$ eine Äquivalenzrelation ist.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 3: Äquivalenzrelation}
+	\begin{block}{Lösung}
+		Zeige, dass $R$ (i) reflexiv, (ii) transitiv und (iii) symmetrisch ist.
+		\begin{itemize}
+			\item[(i)] Sei $G=(V,E)\in\mathcal{G}$ ein Graph.
+			\item Setze $f=Id_V$. Dann ist $f$ offensichtlich bijektiv.
+			\item Es gilt für bel. $v_1,v_2\in V$: $(v_1,v_2) \in E \Leftrightarrow (v_1,v_2)=(f(v_1),f(v_2))\in E$.
+			\item Also ist $f$ ein Graphenisomorphismus und es ist $(G,G)\in R$.
+			\item[(ii)] Seien $G_1=(V_1,E_1),G_2=(V_2,E_2),G_3=(V_3,E_3)\in\mathcal{G}$ mit $(G_1,G_2),(G_2,G_3)\in R$.
+			\item Dann ex. Graphenisomorphismen $f_1 : V_1 \functionto V_2$ und $f_2 : V_2 \functionto V_3$.
+			\item Setze $f=f_2 \circ f_1$. $f$ ist als Verkettung bijektiver Funktionen selbst bijektiv.
+			\item Es gilt für $v_1,v_2\in V_1$: \\
+				$(v_1,v_2) \in E_1 \Leftrightarrow (f_1(v_1),f_1(v_2)) \in E_2 $ \\
+				$\Leftrightarrow (f_2(f_1(v_1)),f_2(f_1(v_2))) \in E_3 \Leftrightarrow (f(v_1),f(v_2)) \in E_3 $
+			\item Also ist $f$ ein Graphenisomorphismus und es folgt $(G_1,G_3) \in R$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 3: Äquivalenzrelation}
+	\begin{block}{Lösung}
+		Zeige, dass $R$ (i) reflexiv, (ii) transitiv und (iii) symmetrisch ist.
+		\begin{itemize}
+			\item[(iii)] Seien $G_1=(V_1,E_1),G_2=(V_2,E_2)\in\mathcal{G}$ mit $(G_1,G_2)\in R$.
+			\item Dann ex. ein Graphenisomorphismus $f : V_1 \functionto V_2$.
+			\item Da $f$ bijektiv ist, existiert die Umkehrfunktion $f^{-1} : V_2 \functionto V_1$, die selbst bijektiv ist.
+			\item Seien $v_1, v_2 \in V_2$ beliebig. Dann existieren $w_1,w_2 \in V_1$ mit $v_1 = f(w_1), v_2 = f(w_2)$ bzw. $w_1=f^{-1}(v_1),w_2=f^{-1}(v_2)$.
+			\item Dann gilt: 
+				$(v_1,v_2)=(f(w_1),f(w_2)) \in E_2 \Leftrightarrow (w_1,w_2)=(f^{-1}(v_1),f^{-1}(v_2)) \in E_1 $
+			\item Also ist $f^{-1}$ ein Graphenisomorphismus und es folgt $(G_2,G_1) \in R$.
+		\end{itemize}
+		Damit ist die Beh. gezeigt. \qed
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 4: Induktion (WS 2008)}
+	\begin{block}{Aufgabe}
+		Es sei $A = \{\word a, \word b\}$. Die Sprache $L \subset A^\ast$ sei definiert durch
+			$$L = \left(\{\word a\}^\ast \cdot \{\word b\} \cdot \{\word a\}^\ast \right)^\ast$$
+		Zeigt, dass jedes Wort $w$ aus $\{\word a, \word b\}^\ast$, das mindestens einmal das Zeichen \word b
+		enthält, in $L$ liegt. (Hinweis: Macht eine Induktion über die Anzahl der
+		Vorkommen des Zeichens \word b in $w$.)
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 4: Induktion (WS 2008)}
+	$$L = \left(\{\word a\}^\ast \cdot \{\word b\} \cdot \{\word a\}^\ast \right)^\ast$$
+	Sei $k$ die Anzahl der Vorkommen von \word b in einem Wort $w \in \{\word a, \word b\}^\ast$.
+	\begin{block}{Induktionsanfang}  \pause
+		Für $k = 1$: In diesem Fall lässt sich das Wort $w$ aufteilen in $$w = w_1 \cdot \word b \cdot w_2$$ wobei $w_1$ und $w_2$ keine \word b enthalten und somit in $\{\word a\}^\ast$ liegen. Damit gilt $w \in \{\word a\}^\ast \cdot \{\word b\} \cdot \{\word a\}^\ast$ und somit auch $$w \in \left(\{\word a\}^\ast \cdot \{\word b\} \cdot \{\word a\}^\ast \right)^\ast = L$$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 4: Induktion (WS 2008)}
+	\begin{block}{Induktionsvoraussetzung}  \pause
+		Für ein festes $k \in \N$ gilt, dass alle Wörter über $\{\word a, \word b\}^\ast$, die genau $k$-mal das Zeichen \word b enthalten, in $L$ liegen.
+	\end{block} \pause
+	\begin{block}{Induktionsschritt}  \pause
+		Wir betrachten ein Wort $w$, das genau $k + 1$ mal das Zeichen \word b enthält. Dann kann man $w$ zerlegen in $w = w_1 \cdot w_2$, wobei $w_1$ genau einmal das Zeichen \word b enthält und $w_2$ genau $k$-mal das Zeichen \word b. \pause Nach Induktionsanfang liegt $w_1$ in $\{\word a\}^\ast \{\word b\}\{\word a\}^\ast$. Nach Induktionsvoraussetzung liegt $w_2$ in $(\{\word a\}^\ast \{\word b\}\{\word a\}^\ast )^\ast$, was bedeutet, dass $w = w_1 \cdot w_2$ in $$\left(\{\word a\}^\ast \{\word b\}\{\word a\}^\ast \right) \* \left(\{\word a\}^\ast \{\word b\}\{\word a\}^\ast \right)^\ast \subseteq \left(\{\word a\}^\ast \{\word b\}\{\word a\}^\ast \right)^\ast = L$$ liegt und die Behauptung ist gezeigt. $\qed$
+	\end{block}
+\end{frame}
+
+\mycomment{
 \begin{frame}[t]{Wahr oder Falsch?}
 	\Socrative
 	\begin{figure}
@@ -58,15 +287,16 @@
 	\DependsQuestionE{Dieser Automat erkennt die Sprache $ \{\word 1\}^*$.} {Die Angabe des Startzustands fehlt. Startet man in $Z_2$, akzeptiert der Automat gar nichts.}
 	% TODO: W/F Fragen?
 \end{frame}
+}
 
-\input{../Bloecke/Regulaer}
+%\input{../Bloecke/Regulaer}
 
-\input{../Bloecke/UebungRegexAutomaten}
+%\input{../Bloecke/UebungRegexAutomaten}
 
-\input{../Bloecke/RechtslineareGrammatiken}
+%\input{../Bloecke/RechtslineareGrammatiken}
 
 
-
+\mycomment{
 \begin{frame}[t]{Wahr oder Falsch?}
 	\FalseQuestionE{Jede kontextfreie Grammatik lässt sich als regulärer Ausdruck \\ darstellen.}{Die Grammatik muss dafür rechtslinear sein, kontextfrei ist \enquote{zu mächtig}.}
 	\TrueQuestion{Jeder reguläre Ausdruck lässt sich durch eine kontextfreie Grammatik darstellen.}
@@ -74,28 +304,22 @@
 	\FalseQuestion{Die Sprache der gültigen Klammerausdrücke ist regulär.}
 	\TrueQuestionE{Die Sprache der gültigen Klammerausdrücke ist kontextfrei.}{}
 \end{frame}
-
+}
 
 
 \def\abbrsize{\footnotesize}
-\begin{frame}	
-	\begin{block}{Was ihr nun wissen solltet}
-		\begin{itemize}
-			\item Rechtslineare Grammatiken
-			\item Reguläre Ausdrücke
-		\end{itemize}
-	\end{block}
-	
+\begin{frame}
 	\begin{block}{Und so geht es weiter...}
 		\vspace{-.3\baselineskip}
 		\begin{itemize}
-			\item Algorithmen I -- Mehr zu Algorithmen, Laufzeiten, Datenstrukturen, Graphen
-			\item \textbf{T}{\abbrsize echnische} \textbf{I}{\abbrsize nformatik} -- Realisierung von Schaltungen, Prozessoren (MIMA, ...)
-			\item \textbf{T}{\abbrsize heoretische} \textbf{G}{\abbrsize rundlagen der} \textbf{I}{\abbrsize nformatik} -- Mehr zu Grammatiken, Komplexität, Entscheidbarkeit, Turingmaschinen
+			\item \textbf{Algo}{\abbrsize rithmen} \textbf{I} \\  -- Mehr zu Algorithmen, Laufzeiten, Datenstrukturen, Graphen
+			\item \textbf{T}{\abbrsize echnische} \textbf{I}{\abbrsize nformatik} \\ -- Realisierung von Schaltungen, Prozessoren (MIMA, ...)
+			\item \textbf{T}{\abbrsize heoretische} \textbf{G}{\abbrsize rundlagen der} \textbf{I}{\abbrsize nformatik} \\ -- Mehr zu Grammatiken, Komplexität, Entscheidbarkeit, Turingmaschinen
 		\end{itemize}
 	\end{block}
 \end{frame}
 
+\mycomment{
 \thassedaniel{
 	\begin{frame}{Falls ihr mehr wollt...}
 		\begin{block}{Persönliche Empfehlungen}
@@ -121,8 +345,9 @@
 	\end{block}
 \end{frame}
 }
+}
 
-
+\mycomment{
 \begin{frame}{Das war GBI}
 	\begin{columns}
 		\pause
@@ -140,15 +365,17 @@
 		\end{figure}
 	\end{columns}
 \end{frame}
+}
 
 \begin{headframe}[ Viel Erfolg  bei \\ euren Klausuren!\rlap{ \smiley}]
 	--- The End ---
 \end{headframe}
-
+\mycomment{
 % Scheint leider kein vernünftiges Abschieds-XKCD zu geben
 \thasse{
 	\xkcdframevert{287}{}{4.0}
 	%\xkcdframe{5.8}{30}{xkcd/np_complete.png}{http://www.xkcd.com}{}
+}
 }
 
 \slideThanks

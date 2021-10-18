@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-% \newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -10,16 +10,43 @@
 \begin{document}
 \starttut{2}
 
+\section{Organisatorisches}
+
+\begin{frame}[t]{How to Übungsblattabgabe}
+	So sollte eure Abgabe aussehen:
+	\begin{itemize}
+		\item Namen und Matrikelnummer \textbf{beider} Abgabepartner aufs Deckblatt!
+		\item Handschriftliche Bearbeitung (Papier oder Tablet)
+		\item Nicht abschreiben
+		\item Lesbar schreiben, Ordnung behalten und Rand freilassen
+		\item Bearbeitung inklusive Deckblatt und exklusive Aufgabenstellung einscannen (oder exportieren) und in \textbf{eine} PDF-Datei zusammenfügen
+		\item Übungsblatt \textbf{pünktlich} einreichen!
+		\item In einem Abgabepaar muss nur einer abgeben
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{How to Übungsblattabgabe}
+	Eure GBI-Übungsblätter müsst ihr über den ILIAS-Kursraum abgeben:
+	\begin{enumerate}
+		\item Geht auf die GBI-Kursseite im \ILIAS
+		\item Klickt unten im Abschnitt "Lernmaterialien" auf das "Aufgabenblätter"-Objekt
+		\item Öffnet den Abschnitt zum Übungsblatt, das ihr abgeben wollt
+		\item Unter der Überschrift "Ihre Einreichung" gibt es einen Knopf "Datei abgeben". Klickt da drauf
+		\item Klickt nun auf den "Datei hochladen"-Knopf
+		\item Auf der nächsten Seite klickt ihr auf "Datei auswählen" (und wählt die PDF-Datei aus, die ihr abgeben wollt)
+		\item Anschließend klickt ihr unten rechts auf "Hochladen"
+	\end{enumerate}
+	\pause
+	Das erste Übungsblatt müsst ihr bis \textbf{morgen} abgeben! (und euch in den nächsten Wochen selbst dran erinnern)
+\end{frame}
+
 \Comment{
 \begin{frame}{Organisatorisches}
-	
-	
 		\begin{itemize}
-			\item Nächsten Donnerstag: Abgabe des ersten Übungsblattes! (Achtung: Bei nachfolgenden Blättern müsst ihr euch selber erinnern!)
+			\item Morgen: Abgabe des ersten Übungsblattes! (Achtung: Bei nachfolgenden Blättern müsst ihr euch selber erinnern!)
 		\end{itemize}
 	
 \end{frame}
-}
 
 \begin{frame}{Zu Blatt \#1}
 	
@@ -38,6 +65,7 @@
 	\thasse{\FalseQuestionE{Ein Beispiel langt als Beweis.}{...bis ein anderes Beispiel herkommt, bei dem es kaputt geht... \\
 			\impl eine Behauptung \textbf{widerlegen} geht mit nem Beispiel sehr gut!}}
 \end{frame}
+}
 
 \mycomment{  % Keine Zeit... Auch nicht sehr nötig diesmal...
 	\begin{frame}[t]{Übungsblätter: Häufige Fehler \daniel{und anderer Kram}}
@@ -56,37 +84,105 @@
 	\end{frame}
 }
 
+\section{Was beim letzten Mal geschah...}
 
 \framePrevEpisode
 
-\begin{frame}{Wahr oder falsch?}
-	\Socrative
-	\TrueQuestionE{$ \setsize{\emptyset} = 0$.}{}
-	\FalseQuestionE{$ \setsize{ \set{\set{}} } = 0$.}{$ \setsize{\set{\set{}}} = \setsize{\set{\emptyset}} = 1$.}
-	\TrueQuestionE{$ \setsize{\set{ 1, \set{2, 3}, 4, \set{5,6,7}}} = 4$.}{$\set{2, 3}$ und $\set{5,6,7}$ sind zwei einzelne Objekte!}
-	\TrueQuestionE{$ \{1, 2\} = \{2, 1\}$.}{}
-	\FalseQuestion{$ (1, 2) = (2, 1)$.}
-	\FalseQuestionE{$ \left(M\cup A\right)\setminus M = A $.}{für z.~B. $ M = A = \{1\}$}
-	%TODO Relationen-Fragen noch? Wenn's im ersten Tut schon vorkam!
-	\visible<12->{
-	\begin{block}{Bemerkungen}
-		Menge / Tupel: Klammern beachten! Einfache Beispiele helfen!
-	\end{block}
-	}
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-2-einstieg/0788ca9d-201d-43bb-8e49-894571e8b641}
+	\end{itemize}
 \end{frame}
 
+%\begin{frame}{Wahr oder falsch?}
+%	\Socrative
+%	\TrueQuestionE{$ \setsize{\emptyset} = 0$.}{}
+%	\FalseQuestionE{$ \setsize{ \set{\set{}} } = 0$.}{$ \setsize{\set{\set{}}} = \setsize{\set{\emptyset}} = 1$.}
+%	\TrueQuestionE{$ \setsize{\set{ 1, \set{2, 3}, 4, \set{5,6,7}}} = 4$.}{$\set{2, 3}$ und $\set{5,6,7}$ sind zwei einzelne Objekte!}
+%	\TrueQuestionE{$ \{1, 2\} = \{2, 1\}$.}{}
+%	\FalseQuestion{$ (1, 2) = (2, 1)$.}
+%	\FalseQuestionE{$ \left(M\cup A\right)\setminus M = A $.}{für z.~B. $ M = A = \{1\}$}
+%	%TODO Relationen-Fragen noch? Wenn's im ersten Tut schon vorkam!
+%	\visible<12->{
+%	\begin{block}{Bemerkungen}
+%		Menge / Tupel: Klammern beachten! Einfache Beispiele helfen!
+%	\end{block}
+%	}
+%\end{frame}
 
-\input{../Bloecke/Relationen1b.tex}
+\begin{frame}[t]{Mengengleichheit: Aufgabe}
+	\begin{itemize}
+		\item<1-> Sei $ A, B, C $ beliebige Mengen. Zeigt, dass gilt 
+		\begin{align*}
+		A \cup (B \cap C) &=  (A \cup B) \cap (A \cup C)
+		\end{align*}		 
+		\only<2-5>{
+			\item<2-5> \textbf{Richtung}: $ A \cup (B \cap C) \subseteq  (A \cup B) \cap (A \cup C) $ 
+			\item<3-5> Sei $ x \in A \cup (B \cap C) $.
+			\item<4-5> Fall 1: Ist $ x \in A$, so folgt $ x \in A \cup B $ und $ x\in A \cup C$ und damit $  x\in (A \cup B) \cap (A \cup C) $
+			\item<5-5> Fall 2 : Ist $x\notin A$, so gilt $ x \in B \cap C$, also auch $ x \in B$ und $ x \in C$. Dann ist auch $ x \in A \cup B $ und $ x \in A \cup C$ und es folgt $  x\in (A \cup B) \cap (A \cup C) $
+		}
+		\only<6->{
+			\item<6-> \textbf{Richtung}: $ A \cup (B \cap C) \supseteq  (A \cup B) \cap (A \cup C) $
+			\item<7-> Wähle $ x \in (A \cup B) \cap (A \cup C) $. Dies bedeutet $x\in A \cup B $ und $ x \in A \cup C $. 
+			\item<8-> Fall 1: $ x \in A $. Dann folgt $ x \in A \cup (B \cap C) $
+			\item<9-> Fall 2: $ x \notin A$. Dann muss $ x \in B $ und $ x \in C $ gelten, denn sonst wäre $ x \notin (A \cup B) \cap (A \cup C) $. Somit $ x\in B \cap C$ und $ x \in A \cup (B \cap C) $. $\qed$
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Potenzmengen: Aufgabe}
+	Gebt eine Abbildung $\phi \colon 2^{M} \functionto 2^{M}$ so an,
+	dass für jedes $L \in 2^{M}$ und für jedes $w \in M$ gilt:
+	\begin{equation*}
+		w \in L \text{ genau dann, wenn } w \notin \phi(L).
+	\end{equation*}
+	
+	\pause
+	\begin{threealign}
+		\phi \colon 2^{M} &\functionto& 2^{M},\\
+		L &\mapsto& M \setminus L.
+	\end{threealign}
+\end{frame}
+
+\begin{frame}[t]{Injektivität und Surjektivität}
+	Was bedeutet nochmal injektiv und surjektiv?
+	\begin{itemize}
+		\item Eine Funktion $ f \from M \functionto N $ heißt \textit{injektiv} wenn gilt: \\
+			\pause
+			für alle $m_1,m_2 \in M$ gilt: Aus $ f(m_1)=f(m_2) $ folgt $ m_1 = m_2 $
+		\pause
+		\item Eine Funktion $ f \from M \functionto N $ heißt \textit{surjektiv} wenn gilt: \\
+			\pause
+			für alle $n \in N$ existiert ein $m \in M$ sodass $f(m)=n$ gilt
+	\end{itemize}
+	\pause
+	\begin{block}{Wahr oder Falsch?}
+		Sei $M$ eine beliebige endliche Menge und $f$ eine Abbildung $f \from M \functionto M$. \\
+			\TrueQuestion{Wenn $f$ injektiv ist, dann ist $f$ auch surjektiv.}
+			\TrueQuestion{Wenn $f$ surjektiv ist, dann ist $f$ auch injektiv.}
+			\FalseQuestionE{Die beiden Aussagen gelten auch, wenn $M$ nicht endlich ist.}{Gegenbeispiele: \\ 
+				$f \from \N_0 \functionto \N_0, n \mapsto 2 \* n $ \\ 
+				$g \from \N_0 \functionto \N_0, n \mapsto \floor{\dfract n/2 }$}
+	\end{block}
+\end{frame}
 
 \input{../Bloecke/Woerter.tex}
+
+\input{../Bloecke/Aussagenlogik.tex}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
-			\item Wie man mit Relationen umgeht
-			\item Welche Eigenschaften Relationen haben können
-			\item Was Abbildungen sind und welche Eigenschaften sie haben können
+			\item Wie und wo ihr euer Übungsblatt abgebt
+			\item Welche Eigenschaften Relationen und Funktionen haben können
+			\item Was Alphabete und Wörter sind
 			\item Wie man mit Wörtern rechnet
+			\item Was logische Aussagen sind
 		\end{itemize}
 	\end{block}
 	

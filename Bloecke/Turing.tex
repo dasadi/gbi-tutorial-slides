@@ -7,15 +7,18 @@
 \section{Turingmaschinen}
 
 \begin{frame}{Grenzen endlicher Automaten}
-	Automaten haben ja keinen Speicher außer ihren Zustand. \\
-	\medskip
-	\impl Ändern wir das: \\
-	Nehmen wir nen Mealy-Automaten und ein unendlich langes Buchstabenband, das er lesen/beschreiben kann. \\
-	\medskip
-	Heraus kommt die...
+	Automaten sind uns nicht mächtig genug:
+	\begin{itemize}[<+->]
+		\item sie können nicht ``zählen''
+		\item Beispiel: $L=\left\{ w \in \left\{ \word a, \word b \right\}^* \text{ | } w \text{ enthält genau so viele \word as wie \word bs } \right\}$ kann nicht erkannt werden
+		\item im Zustand können nur endlich viele Informationen kodiert werden
+		\implitem zusätzlichen, unbegrenzten Speicher hinzufügen
+		\implitem Automat mit \textbf{Band}: die Turingmaschine
+	\end{itemize}
 \end{frame}
 
 \subsection{Inhalt}
+\mycomment{ % no time
 \begin{frame}{Turingmaschine}
 	\includegraphics[scale=1]{turing/tmAufbau}
 \end{frame}
@@ -29,6 +32,7 @@
 		\includegraphics[scale=0.35]{turing/imitationGame}
 	\end{frame}
 }
+} % end mycomment
 
 %Das hier am Besten hinmalen mit Band und Schreiblesekopf und an der Tafel machen:
 \begin{frame}{Eine einfache Turingmaschine}
@@ -48,7 +52,7 @@
 		;
 		\end{tikzpicture}
 	\end{center} \pause
-	Macht genau dasselbe wie der Automat ausm letzten Tut. \\ \pause
+	Diese TM vertauscht $\word 1$en und $\word 0$en und ist beleidigt, wenn sie eine $\word 2$ liest. \\ \pause
 	\begin{tabular}{rl@{\ \?>\ }rl}
 		Zustand vorher: & a &  nachher: & \hphantom{\word{100010}}a \\
 		Band vorher: &\word{011101} &  nachher:&  \word{100010}$\9$\\
@@ -69,7 +73,7 @@
 	\begin{itemize}[<+->]
 		\item einem unendlichen Band mit einzelnen Zellen, in denen jeweils genau ein Symbol aus dem Bandalphabet steht
 		\item einem Schreib-/Lesekopf, der auf genau einer Bandzelle steht
-		\item einer Steuerungseinheit (Mealy-Automat), die sich in genau einem Zustand befindet
+		\item einer Steuerungseinheit (ähnlich zu einem Moore-Automat, mit der Ausgabe in den Übergängen), die sich in genau einem Zustand befindet
 	\end{itemize}
 \end{frame}
 

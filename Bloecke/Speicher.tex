@@ -1,3 +1,5 @@
+
+\mycomment{
 \section{Funktionen von Funktionen}
 
 \begin{frame}{Funktionen}
@@ -201,7 +203,25 @@
 	(Hinweis: Abbildung $=$ Funktion, gell? \smiley)
 \end{frame}
 
+} %end mycomment
+
 \section{Speicher}
+
+\begin{frame}{Erinnerung: Funktionsmengen}
+	\begin{Definition}
+		Seien A und B Mengen. Dann ist $$B^A := \set{f \Mid f \from A \functionto B }$$ die Menge aller Abbildungen von $A$ nach $B$.
+	\end{Definition}
+
+	Abbildungen kann man sich auch als Tabellen vorstellen: \\
+	Wir wählen für jedes $a \in A$ ein $b \in B$.
+	
+	\begin{block}{Beobachtung}
+		Für endliche Mengen A und B gilt:
+		\delimitershortfall=0pt
+		$$\setsize{B^A} = \setsize B^{\setsize A}$$
+	\end{block}
+\end{frame}
+
 
 \begin{frame}{Bit vs. Byte}
 	\begin{Definition}

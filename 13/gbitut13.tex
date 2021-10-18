@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-%\newcommand{\handout}{}
+\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -10,25 +10,68 @@
 \begin{document}
 \starttut{13}
 
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#11}
+	Bisheriger Schnitt: \quad 12.7 / 21~P
+
+	\begin{itemize}
+		\item 13 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
+		\item Wenn ihr Fragen habt, meldet euch bei mir
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#11}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item[1d)] ``Wie viele Knoten dürfen \textit{höchstens} in $F$ sein, damit ...''
+		\implitem Begründen, warum für $|F| = 2$ nicht immer ein sicherer Weg existiert \textbf{und} dass für $|F|=1$ immer ein sicherer Weg existiert.
+		\item[3)] Aussagen im O-Kalkül begründet man mit den \textit{Rechenregeln aus der Vorlesung} oder anhand der \textit{Definitionen von asymptotischen Wachstum}.
+		\item Dabei \textbf{präzise} sein, z.B.: $2^{\sqrt{n}}$ hat nicht die Form ``$a^n$ für ein $a\in \mathbb{R}^+$''.
+		\item $f_1 \preceq f_2$ bedeutet nicht unbedingt $f_2 \not\preceq f_1$
+		\item \textbf{Auf keinen Fall} $f=\Oh{g}$ schreiben! $\Oh{g}$ ist eine Menge von Funktionen und man schreibt $f\in\Oh{g}$
+		\item[*)] ``Laut Tutorium'' ist keine gute Begründung \smiley
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Schwarzes Brett}
 	\begin{itemize}
+		\item Korrektur: Ein zusammenhängender ungerichteter Graph ist genau dann ein Baum, wenn es in ihm keine echten Kreise \textit{und keine Schleifen} gibt.
 		\item Anmeldung \textbf{Klausur} $+$ \textbf{Übungsschein} nicht vergessen!
 		\item Erinnerung: Klausur am \Klausurtermin
+		\item Bonus: Übungsstunde am 22. Februar 2021, 12:00 - 13:30 Uhr
 	\end{itemize}
 \end{frame}
 
 \framePrevEpisode
 
-\begin{frame}[t]{Wahr oder Falsch?}
-	\FalseQuestionE{Das (komplizierte) Master-Theorem kann man immer anwenden.}{ Nur bei rekursiven Algorithmen, bei denen das Problem in gleich große Teilprobleme aufgeteilt wird.}
-	\FalseQuestionE{Jeder Moore-Automat kann in einen Mealy-Automaten umgewandelt werden, der für jedes Wort die gleiche Ausgabe produziert.}{ Für das leere Wort kann ein Mealy-Automat niemals eine Ausgabe produzieren.}
-	\TrueQuestionE{Endliche Akzeptoren sind Moore-Automaten mit dem Ausgabealphabet $\{\word 0,\word 1\}$.}{}
-	\FalseQuestionE{Mit endlichen Automaten kann jede beliebige Sprache erkannt \\ werden.}{Tatsächlich ist die Menge der akzeptierbaren Sprachen sogar sehr eingeschränkt.}	
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ihr könnt mit eurem Handy oder PC über \url{https://kahoot.it} mitspielen
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-13-einstieg/9cfc29f7-2261-49ce-974b-9ca3b305c81b}
+	\end{itemize}
 \end{frame}
+
+%\begin{frame}[t]{Wahr oder Falsch?}
+%	\FalseQuestionE{Das (komplizierte) Master-Theorem kann man immer anwenden.}{ Nur bei rekursiven Algorithmen, bei denen das Problem in gleich große Teilprobleme aufgeteilt wird.}
+%	\FalseQuestionE{Jeder Moore-Automat kann in einen Mealy-Automaten umgewandelt werden, der für jedes Wort die gleiche Ausgabe produziert.}{ Für das leere Wort kann ein Mealy-Automat niemals eine Ausgabe produzieren.}
+%	\TrueQuestionE{Endliche Akzeptoren sind Moore-Automaten mit dem Ausgabealphabet $\{\word 0,\word 1\}$.}{}
+%	\FalseQuestionE{Mit endlichen Automaten kann jede beliebige Sprache erkannt \\ werden.}{Tatsächlich ist die Menge der akzeptierbaren Sprachen sogar sehr eingeschränkt.}	
+%\end{frame}
+
+\input{../Bloecke/Akzeptoren}
 
 \input{../Bloecke/Turing}
 
 \input{../Bloecke/TMKomplexitaet}
+
+\input{../Bloecke/Regulaer}
+
+\input{../Bloecke/RechtslineareGrammatiken}
 
 \begin{frame}{Turingmaschinen: Klausur}
 	Noch ein Hinweis zum Schluss:\\
@@ -36,7 +79,7 @@
 	Diese gibt meist relativ viele Punkte.\\
 	
 	\bigskip
-	Zu 99 \% wird auch dieses Mal wieder eine TM-Aufgabe drankommen.\\
+	Es ist hochwahrscheinlich, dass auch dieses Mal wieder eine TM-Aufgabe drankommt.\\
 	\textbf{Also übt das!} Hier zählt vor allem Geschwindigkeit (und Präzision).
 \end{frame}
 
@@ -46,15 +89,17 @@
 			\item Turingmaschinen
 			\item Komplexität
 			\item Entscheidbarkeit -- Wir können alles. Außer Halteproblem. Und so Zeug.
-		\end{itemize}
-	\end{block}
-	
-	\begin{block}{Was nächstes Mal kommt}
-		\begin{itemize}
 			\item Reguläre Ausdrücke
 			\item Rechtslineare Grammatiken
 		\end{itemize}
 	\end{block}
+	
+	%\begin{block}{Was nächstes Mal kommt}
+	%	\begin{itemize}
+	%		\item Reguläre Ausdrücke
+	%		\item Rechtslineare Grammatiken
+	%	\end{itemize}
+	%\end{block}
 \end{frame}
 
 % TODO ?
