@@ -230,3 +230,6 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+# VS Code editor settings
+.vscode/*
