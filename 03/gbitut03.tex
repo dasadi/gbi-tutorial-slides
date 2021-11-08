@@ -1,7 +1,7 @@
 %beamer
 
 % Comment/uncomment this line to toggle handout mode
-\newcommand{\handout}{}
+%\newcommand{\handout}{}
 
 \input{../framework/PraeambelTut.tex}
 
@@ -13,20 +13,20 @@
 \section{Organisatorisches}
 
 \begin{frame}{Zu Übungsblatt \#1}
-	Schnitt: \quad 11,8 / 17~P
+	Schnitt: \quad 15,8 / 20~P
 
 	\begin{itemize}[<+->]
-		\item 19 von 22 Tutanden haben etwas abgegeben. Weiter so!
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
-		\item Ihr habt alle pünktlich abgegeben :)
+		\item 20 von 24 TutandInnen haben etwas abgegeben. Sehr schön!
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ich habe ein Übungsblatt erst diese Woche erhalten, die Punktevergabe muss ich dazu noch abklären
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Zu Übungsblatt \#1}	
 	\begin{itemize}[<+->]
-		\item Erstmal: Volle Punktzahl ist utopisch. Fehler macht man, um draus zu lernen – dazu sind ÜBs da
-		\item Für viele viele viele falsche Notationen habe ich noch nichts abgezogen - das wird zukünftig nicht mehr so sein!
+		\item Erstmal: Volle Punktzahl ist utopisch. Fehler macht man, um daraus zu lernen – dazu sind ÜBs da
+		\item Für falsche Notationen habe ich beim ersten Blatt teilweise noch nichts abgezogen - in Zukunft gibt es für falsche Notation Abzüge!
 	\end{itemize}
 \end{frame}
 
@@ -35,27 +35,23 @@
 	\begin{itemize}[<+->]
 		\item Wenn in der Aufgabenstellung steht: \textit{Geben Sie ein $x$ an sodass gilt: ...}, dann genügt es ein solches $x$ anzugeben
 		\implitem Keine Begründung gefordert!
+		\implitem Für eine falsche Begründung gibt es Abzüge, auch wenn keine gefordert
 		\item \textbf{All-Aussagen}, also Aussagen mit \textit{Für alle $x$ mit ... gilt ...} könnt ihr mit \textbf{einem Gegenbeispiel} widerlegen.
-		\item ...aber ihr könnt sie nicht mit nur einem Beispiel beweisen. Ein Beweis für eine All-Aussage muss für alle solche Elemente gelten!
+		\item ...aber ihr könnt sie \textbf{nicht} mit nur einem Beispiel beweisen. Ein Beweis für eine All-Aussage muss für alle solche Elemente gelten!
 		\item \textbf{Existenz-Aussagen}, also Aussagen mit \textit{Es existiert ein $x$ sodass ... gilt} könnt ihr mit einem Beispiel beweisen.
 		\item ...aber wenn ihr sie widerlegen wollt, müsst ihr das für alle möglichen $x$ tun.
-		\item Gebt nur eine Lösung an. Wenn ihr mehrere angebt und eine davon falsch ist, muss ich die falsche Werten.
-		\implitem Gebt nur so viel an wie gefordert ist, ihr könnt dafür nur Abzug bekommen!
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Zu Übungsblatt \#1}
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
-		\item ``Genau-dann-wenn''-Aussagen beschreiben Äquivalzen. Ihr müsst diese Aussagen in beiden Richtungen oder mithilfe von Äquivalenzen zeigen.
-		\item \textit{Erinnerung: $ A \Leftrightarrow B $ gilt genau dann wenn $A \Rightarrow B$ und $A \Leftarrow B$ gelten}
+		\item Gebt nur eine Lösung an. Wenn ihr mehrere angebt und eine davon falsch ist, muss ich die falsche werten.
+		\implitem Gebt nur so viel an wie gefordert ist, ihr könnt dafür nur Abzug bekommen!
 		\item Wenn in der Aufgabenstellung steht dass eine Aussage wahr bzw. falsch ist, dann ist sie das auch.
 		\item Definiert alle Variablen, die ihr benutzt! \\
-			z.B. in Aufgabe 1.2a): \textit{Sei $A=\emptyset$ und $B$ eine beliebige Menge}
+			z.B. in Aufgabe 1.3c): \textit{Es sei $a\in (A \cap B)\cup C$}
 		\item Sätze aus der Vorlesung müsst ihr nicht abschreiben, der Name reicht, z.B. $ a + b \stackrel{kommutativ}{=} b + a$
-		\item Was sind notwendige und hinreichende Bedingungen?
-		\item Für $A \Rightarrow B$ heißt $A$ eine hinreichende Bedingung für $B$ und $B$ eine notwendige Bedingung für $A$
-		\item Eine Bedingung ist notwendig \textbf{und} hinreichend wenn sie äquivalent ist.
 	\end{itemize}
 \end{frame}
 
@@ -65,12 +61,12 @@
 		\item Unterscheidet Mengen und Aussagen! \\
 		Passt mit euren \textbf{Operatoren} auf: Für Mengen $A,B$ sind $A \Rightarrow B$, $A \Leftarrow B$ und $A \Leftrightarrow B$ nicht definiert.
 		\implitem Ihr könnt euch mit $x \in A \Rightarrow x \in B$, $A \subseteq B$, ... Abhilfe schaffen.
-		\item Für eine Menge $A$ haben wir $\bar{A}$ / $\neg A$ / das ``allgemeine'' Komplement nicht definiert.
+		\implitem Wenn es um Mengengleichheit geht, könnt ihr einfach $=$ benutzen \\
+			z.B. Aufgabe 1.1c): $(B \backslash (B \cup A)) \cup ((A \cup B) \backslash ((A \backslash B) \cup (B \backslash A))) = (B \backslash A) \cup (A \cap B)$
+		\item Für eine Menge $A$ haben wir $\bar{A}$ / $\neg A$ / $A^C$ / das ``allgemeine'' Komplement nicht definiert.
 		\implitem Stattdessen $x \not\in A$ benutzen
 		\item Unterscheidet $\in$ und $\subseteq$! \\
 			Insbesondere ist $A$ mit $A \subseteq 2^{\mathbb{N}_0}$ eine Menge von Mengen von natürlichen Zahlen und $B$ mit $B \in 2^{\mathbb{N}_0}$ eine Menge von natürlichen Zahlen.
-		\item Die \textit{set comprehension} funktioniert so: \\
-			Beispiele: $\{x^2 | x \in \mathbb{N} \text{ ist eine Primzahl }\}$ und $\{x \in \mathbb{Z} : 2 \cdot x \text{ ist eine Quadratzahl }\}$
 	\end{itemize}
 \end{frame}
 
@@ -78,6 +74,7 @@
 	Zu guter Letzt:
 	\begin{itemize}[<+->]
 		\item Bearbeitet die Aufgaben selbstständig oder mit eurem Abgabepartner
+		\item Am Besten klappt es mit einem Partner, was auch die Punkteverteilung zeigt
 		\item Bleibt dabei! Übung macht den Meister
 	\end{itemize}
 \end{frame}
@@ -93,7 +90,7 @@
 		\item Ihr bekommt Punkte für schnelles und richtiges raten
 		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
 		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-3-einstieg/c0638af4-aaa2-4892-8916-a2eab442312d}
+			\url{https://create.kahoot.it/share/gbi-woche-3/b3d43857-eb88-4897-b04a-6dca27b46518}
 	\end{itemize}
 \end{frame}
 
@@ -160,28 +157,28 @@
 	
 \end{frame}
 
-\input{../Bloecke/Induktion.tex}
+%\input{../Bloecke/Induktion.tex}
 
-%\input{../Bloecke/Aussagenlogik.tex}
+\input{../Bloecke/Aussagenlogik.tex}
 
-%\input{../Bloecke/Aussagenlogik2}
+\input{../Bloecke/Aussagenlogik2}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
 			\item Welche Fehler man auf dem Übungsblatt lieber vermeidet \smiley
-			\item Wie vollständige Induktion geht
-%			\item Aussagenlogik: Syntax und Semantik
+			\item Aussagenlogik: Syntax und Semantik
+			\item Wie man Aussagen ableitet und beweist
 %			\item Wie man wahre Aussagen konstruiert \qquad (\#NoFakeNews!) 
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
-			\item Aussagenlogik
-			\item Beweisbarkeit
-			\item Formale Sprachen
-%			\item Aus \word2 mach \word{10}: Übersetzungen
+%			\item Aussagenlogik
+%			\item Beweisbarkeit
+			\item Induktives Vorgehen \impl vollständige Induktion
+			\item Aus \word2 mach \word{10}: Übersetzungen
 		\end{itemize}
 	\end{block}
 \end{frame}

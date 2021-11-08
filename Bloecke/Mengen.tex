@@ -147,7 +147,6 @@
 		A \setminus C &= \only<4->{ \{2\} }\\
 		B \setminus A &= \only<5->{ \{3\} }\\
 		A \cup (B \setminus C) &= \only<6->{ \{1, 2\} }\\
-		C &= \{1, 3\} \\
 		(A \setminus C) \cup B &= \only<7->{ \{2, 3\} }\\
 		A \cap B &= \only<8->{ \emptyset }
 		\end{align*}
@@ -171,28 +170,28 @@
 			\item<9-> Fall 2: $x\in T_2$ (angenommen $T_2 \neq \emptyset$). Somit $x\in A$ und $x\in M$. $\qed$}
 	\end{itemize}
 \end{frame}
-
-\begin{frame}[t]{Mengengleichheit: Aufgabe}
-	\begin{itemize}
-		\item<1-> Sei $ A, B, C $ beliebige Mengen. Zeigt, dass gilt 
-		\begin{align*}
-		A \cup (B \cap C) &=  (A \cup B) \cap (A \cup C)
-		\end{align*}		 
-		\only<2-5>{
-			\item<2-5> \textbf{Richtung}: $ A \cup (B \cap C) \subseteq  (A \cup B) \cap (A \cup C) $ 
-			\item<3-5> Sei $ x \in A \cup (B \cap C) $.
-			\item<4-5> Fall 1: Ist $ x \in A$, so folgt $ x \in A \cup B $ und $ x\in A \cup C$ und damit $  x\in (A \cup B) \cap (A \cup C) $
-			\item<5-5> Fall 2 : Ist $x\notin A$, so gilt $ x \in B \cap C$, also auch $ x \in B$ und $ x \in C$. Dann ist auch $ x \in A \cup B $ und $ x \in A \cup C$ und es folgt $  x\in (A \cup B) \cap (A \cup C) $
-		}
-		\only<6->{
-			\item<6-> \textbf{Richtung}: $ A \cup (B \cap C) \supseteq  (A \cup B) \cap (A \cup C) $
-			\item<7-> Wähle $ x \in (A \cup B) \cap (A \cup C) $. Dies bedeutet $x\in A \cup B $ und $ x \in A \cup C $. 
-			\item<8-> Fall 1: $ x \in A $. Dann folgt $ x \in A \cup (B \cap C) $
-			\item<9-> Fall 2: $ x \notin A$. Dann muss $ x \in B $ und $ x \in C $ gelten, denn sonst wäre $ x \notin (A \cup B) \cap (A \cup C) $. Somit $ x\in B \cap C$ und $ x \in A \cup (B \cap C) $. $\qed$
-		}
-	\end{itemize}
-\end{frame}
-
+\mycomment{ %allready on UB
+	\begin{frame}[t]{Mengengleichheit: Aufgabe}
+		\begin{itemize}
+			\item<1-> Sei $ A, B, C $ beliebige Mengen. Zeigt, dass gilt 
+			\begin{align*}
+			A \cup (B \cap C) &=  (A \cup B) \cap (A \cup C)
+			\end{align*}		 
+			\only<2-5>{
+				\item<2-5> \textbf{Richtung}: $ A \cup (B \cap C) \subseteq  (A \cup B) \cap (A \cup C) $ 
+				\item<3-5> Sei $ x \in A \cup (B \cap C) $.
+				\item<4-5> Fall 1: Ist $ x \in A$, so folgt $ x \in A \cup B $ und $ x\in A \cup C$ und damit $  x\in (A \cup B) \cap (A \cup C) $
+				\item<5-5> Fall 2 : Ist $x\notin A$, so gilt $ x \in B \cap C$, also auch $ x \in B$ und $ x \in C$. Dann ist auch $ x \in A \cup B $ und $ x \in A \cup C$ und es folgt $  x\in (A \cup B) \cap (A \cup C) $
+			}
+			\only<6->{
+				\item<6-> \textbf{Richtung}: $ A \cup (B \cap C) \supseteq  (A \cup B) \cap (A \cup C) $
+				\item<7-> Wähle $ x \in (A \cup B) \cap (A \cup C) $. Dies bedeutet $x\in A \cup B $ und $ x \in A \cup C $. 
+				\item<8-> Fall 1: $ x \in A $. Dann folgt $ x \in A \cup (B \cap C) $
+				\item<9-> Fall 2: $ x \notin A$. Dann muss $ x \in B $ und $ x \in C $ gelten, denn sonst wäre $ x \notin (A \cup B) \cap (A \cup C) $. Somit $ x\in B \cap C$ und $ x \in A \cup (B \cap C) $. $\qed$
+			}
+		\end{itemize}
+	\end{frame}
+}
 \section{Potenzmengen}
 
 \begin{frame}{... in einer Menge! (Potenzmengen)}
