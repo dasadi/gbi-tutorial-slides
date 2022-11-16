@@ -4,46 +4,47 @@
 \section{Algorithmen: Hoare-Kalkül}
 
 \subsection{Algorithmen}
-\begin{frame}{Algorithmen}
-	\begin{block}{Definition}
-		Ein Algorithmus ist...
-		\begin{itemize}[<+->]
-			\item Eine endliche Beschreibung
-			\item aus elementaren Anweisungen, 
-			\item die deterministisch ($=$ ohne Zufall!) ausgeführt werden.\\
-				{\small (Manchmal auch gemischt mit (Pseudo-)Zufallselementen)}
-			\item Eine endliche Eingabe gibt endliche Ausgabe...
-			\item in endlich vielen Schritten.
-			\item Das funktioniert für beliebig große Eingaben und
-			\item ist nachvollziehbar bzw. verständlich.
+\mycomment{%in last tut
+	\begin{frame}{Algorithmen}
+		\begin{block}{Definition}
+			Ein Algorithmus ist...
+			\begin{itemize}[<+->]
+				\item Eine endliche Beschreibung
+				\item aus elementaren Anweisungen, 
+				\item die deterministisch ($=$ ohne Zufall!) ausgeführt werden.\\
+					{\small (Manchmal auch gemischt mit (Pseudo-)Zufallselementen)}
+				\item Eine endliche Eingabe gibt endliche Ausgabe...
+				\item in endlich vielen Schritten.
+				\item Das funktioniert für beliebig große Eingaben und
+				\item ist nachvollziehbar bzw. verständlich.
+			\end{itemize}
+		\end{block}
+		\pause[8]
+		Woher wissen wir, ob ein Algorithmus korrekt ist?
+	\end{frame}
+
+	\begin{frame}{Korrektheit}
+		Einige Algorithmen haben besonders hohe Anforderungen an ihre Korrektheit:
+		Banking-Server, Airbag-Steuerprogramm, Herzschrittmacher, ...
+		\bigskip
+
+		
+		Korrektheit garantieren?\pause
+		\begin{itemize}
+			\item Testen? \pause Was, wenn wir einen Sonderfall vergessen? \pause
+			\item Alle Eingaben testen? \pause Oft nicht möglich. \pause
+			\item Formal beweisen: \textbf{Hoare-Kalkül} \pause
 		\end{itemize}
-	\end{block}
-	\pause[8]
-	Woher wissen wir, ob ein Algorithmus korrekt ist?
-\end{frame}
-
-\begin{frame}{Korrektheit}
-	Einige Algorithmen haben besonders hohe Anforderungen an ihre Korrektheit:
-	Banking-Server, Airbag-Steuerprogramm, Herzschrittmacher, ...
-	\bigskip
-
-	
-	Korrektheit garantieren?\pause
-	\begin{itemize}
-		\item Testen? \pause Was, wenn wir einen Sonderfall vergessen? \pause
-		\item Alle Eingaben testen? \pause Oft nicht möglich. \pause
-		\item Formal beweisen: \textbf{Hoare-Kalkül} \pause
-	\end{itemize}
-	
-	\begin{block}{In der Praxis}
-		Theoretisch müsste die komplette Werkzeugkette bewiesen werden:
-		Programm, Compiler, Prozessor...\\
-		Oft wird bei Compilern nur “Proven in use” benutzt: Compiler, bei
-		denen seit Jahren keine Fehler gefunden wurden.
-	\end{block}
-	
-\end{frame}
-
+		
+		\begin{block}{In der Praxis}
+			Theoretisch müsste die komplette Werkzeugkette bewiesen werden:
+			Programm, Compiler, Prozessor...\\
+			Oft wird bei Compilern nur “Proven in use” benutzt: Compiler, bei
+			denen seit Jahren keine Fehler gefunden wurden.
+		\end{block}
+		
+	\end{frame}
+}
 \subsection{Hoare-Kalkül}
 \begin{frame}{Der Hoare-Kalkül}
 	\begin{block}{Definition}
@@ -234,7 +235,7 @@
 
 \begin{frame}{Aufgabe}
 	\vspace{-10mm}
-	  \begin{align*}
+	\begin{align*}
 	&\assert{x=a \land y=b}  \\
 	&\kw{if } x>y \kw{ then } \\
 	&\hspace{2em} \assert{ \dots\ } \\
@@ -323,7 +324,7 @@
 			\item helfen, die Korrektheit eines Programmes zu beweisen
 			\item muss man ebenfalls beweisen 
 			\item garantieren nicht die Korrektheit des Programms:\pause \\
-			 Terminierung der Schleife muss zusätzlich gezeigt werden! (nicht in GBI)
+			Terminierung der Schleife muss zusätzlich gezeigt werden! (nicht in GBI)
 		\end{itemize}
 	\end{block}
 \end{frame}

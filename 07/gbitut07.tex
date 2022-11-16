@@ -33,62 +33,48 @@
 	\end{frame}
 }
 
+\section{Organisatorisches}
+
+\begin{frame}{Übungsblattabgabe}
+	\begin{itemize}[<+->]
+		\item Ab dem 7. Blatt nur noch \textbf{Einzelabgabe} erlaubt
+		\item Für die 2. Hälfte (Blätter 7-12) werden wieder 50~\% der Punkte benötigt
+		\item Anmeldung zum Übungssschein und Prüfung erst im Januar \impl dann mehr
+	\end{itemize}
+\end{frame}
+
 \section{Rückblick}
 
-\begin{frame}{Zu Übungsblatt \#4}
-	Schnitt: \quad 13,6 / 20~P
-
-	\begin{itemize}[<+->]
-		\item 19 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
-		\item Ihr habt alle pünktlich abgegeben :)
-		\item Korrektur kam erst diese Woche, sorry dafür!
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Zu Übungsblatt \#4}
-	Die häufigsten Fehler:
-	\begin{itemize}[<+->]
-		\item Aufgabe 4.2: Aufgabenstellung \textbf{genau} lesen und \textbf{nur} die erlaubten Zeichen benutzen!
-		\item Aufgabe 4.4c): im IS einer vollständigen Induktion müsst ihr die IV verwenden!
-	\end{itemize}
-\end{frame}
-
 \begin{frame}{Zu Übungsblatt \#5}
-	Schnitt: \quad 8,1 / 17~P
+	Schnitt: \quad 11,3 / 19,5~P
 
 	\begin{itemize}[<+->]
-		\item 19 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item 16 von 23 TutandInnen haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
 		\item Ihr habt alle pünktlich abgegeben :)
+		\item Es gab eine Änderung der Punkte: Aufgabe 5.2b) wurde Zusatzaufgabe, da Aufgabe falsch/unvollständig gestellt
+		\item[] Trotzdem von Vielen korrekt gelöst \impl 2,5 Bonuspunkte
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Zu Übungsblatt \#5}
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
-		\item Viele Probleme mit den Aufgabenstellungen:
-		\item Aufgabe 5.1: Zeigen, dass $h_3$ ein Homomorphismus ist.
-		\item[] Das macht man, indem man $\forall x,y\in A^* : h_3(xy)=h_3(x)h_3(y)$ zeigt.
-		\item Aufgabe 5.2b): Beweise, dass Aussage A eine notwendige und hinreichende Bedingung für Aussage B ist.
-		\item[] Das macht man, indem man A \impl B und B \impl A zeigt.
-		\item Aufgabe 5.3b): Für \textbf{jedes} ${i\in\mathbb{N}_0} g^i(w)$ und $f(g^i(w))$ angeben.
-		\item Aufgabe 5.3d): Im Beweis kleinschrittig vorgehen. Jeder Schritt sollte ohne Händewedeln verständlich sein.
-		\item Aufgabe 5.4: Die war einfach schwer :/
+		\item Aufgabe 5.2a): Es gibt maximal \textbf{6} verschiedene Rechtsinversen
+		\item Aufgabe 5.3d): Es handelt sich um \textbf{keinen} Homomorphismmus!
+		\item Aufgabe 5.4a): Aufgabenstellung \textbf{genau} lesen! Es war eine \textbf{formale Definiton} gefordert
 	\end{itemize}
 \end{frame}
 
 \framePrevEpisode
-
 \begin{frame}{Kahoot!}
 	\begin{itemize}[<+->]
 		\item Kahoot! ist ein anonymes Online-Quiz
 		\item Ihr bekommt Punkte für schnelles und richtiges raten
 		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
 		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-7-einstieg/6c223916-02c7-41bc-82b0-ec082b026ca3}
+			\url{https://create.kahoot.it/share/gbi-woche-7-einstieg/a0d1b134-24cd-4621-a25f-012a8af5635f}
 	\end{itemize}
 \end{frame}
 
@@ -117,26 +103,21 @@
 
 \input{../Bloecke/MIMA.tex}
 
-\begin{frame}{Noch offen: Klammerausdrücke}
-	A long, long time ago, in a land far away:\\
-	\medskip
-	Formale Sprachen angeben durch $\set{}, \*, {}^+, {}^*$...\\
-	Was ist mit der \textbf{Sprache aller gültigen Klammerausdrücke}? Können wir die auch so angeben?\\[1em]
-	\pause
-	\impl Jetzt wissen wir: \textbf{Nein}, das geht nicht! (Siehe VL)\\[1em]
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.7]{xkcd/(.png}
-		\vspace{-7pt}
-		\caption{ \texttt{\url{https://xkcd.com/859/}} }
-	\end{figure}
-\end{frame}
-
-\input{../Bloecke/Grammatiken.tex}
-
-% Nicht unbed. nötig. Je nach Zeitbudget.
-%\input{../Bloecke/Relationen2.tex}
+%\begin{frame}{Noch offen: Klammerausdrücke}
+%	A long, long time ago, in a land far away:\\
+%	\medskip
+%	Formale Sprachen angeben durch $\set{}, \*, {}^+, {}^*$...\\
+%	Was ist mit der \textbf{Sprache aller gültigen Klammerausdrücke}? Können wir die auch so angeben?\\[1em]
+%	\pause
+%	\impl Jetzt wissen wir: \textbf{Nein}, das geht nicht! (Siehe VL)\\[1em]
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[scale=0.7]{xkcd/(.png}
+%		\vspace{-7pt}
+%		\caption{ \texttt{\url{https://xkcd.com/859/}} }
+%	\end{figure}
+%\end{frame}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
@@ -144,7 +125,6 @@
 			%\item Mehr Eigenschaften von Relationen
 			\item Was die MIMA ist
 			\item Wie man Programme in der MIMA schreibt
-			\item Was eine kontextfreie Grammatik ist
 			%\item Wie man Sprachen mit Grammatiken beschreiben kann
 			%\item Welche Eigenschaften Relationen haben können
 		\end{itemize}
@@ -152,8 +132,8 @@
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
+			\item was kontextfreie Grammatiken sind
 			\item Wie man Sprachen mit Grammatiken beschreiben kann
-			\item Noch mehr Grammatiken
 			\item Mehr Eigenschaften von Relationen
 			%\item Nachts sind alle Katzen grau -- Prädikatenlogik
 			%\item Algorithmen: Kochrezepte der Informatik

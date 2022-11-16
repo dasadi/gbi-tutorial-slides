@@ -445,7 +445,7 @@
 \end{frame}
 
 \begin{frame}{Turing-Maschinen vs. Supercomputer}
-	Eine TM kann \textbf{genauso viel} berechnen wie euer Handy oder ein Supercomputer von Intel. {\small (Bloß halt etwas langsamer und umständlicher!)} \\
+	Eine TM kann \textbf{genauso viel} berechnen wie euer Handy oder ein Supercomputer. {\small (Bloß halt etwas langsamer und umständlicher!)} \\
 	\medskip
 	Es gibt kein „mächtigeres“ Maschinenmodell als Turingmaschinen. \\
 	\only<beamer:0>{
@@ -456,50 +456,47 @@
 	}
 \end{frame}
 
-\mycomment{ % Formalkram ist bähhh...
-	% Ja, aber eigentlich wichtig. Aber dieses Jahr keine Zeit.
-	\begin{frame}{Konfiguration}
-		\begin{Definition}
-			Als \textbf{Konfiguration} $ c =(z,b,p)$ bezeichnen wir den Zustand einer Turing-Maschine zu einem Zeitpunkt. Dabei ist 
-			\begin{itemize}
-				\item $z\in Z$ der Zustand
-				\item $b: \Z\to X$ die Bandbeschriftung
-				\item $p\in \Z$ die Position des Zeigers.
-			\end{itemize}
-		\end{Definition}
-	\end{frame}
-	
-	\begin{frame}{Berechnungsschritte}
-		\begin{Definition}
-			In einem Berechnungsschritt geht eine TM aus einer Konfiguration $c$ 
-			in die Konfiguration $$\Delta_1(c) := c' = (z',b',p')$$ über, wobei gilt:
-			\begin{itemize}[<+->]
-				\item $z' = f(z,b(p))$
-				\item $\forall i\in \Z: b'(i) =
-				\begin{cases}
-				b(i) & \text{ falls } i\not=p \\
-				g(z,b(p)) & \text{ falls } i=p
-				\end{cases}$
-				\item $p' = p + m(z,b(p))$
-			\end{itemize}
-			\bigskip
-			
-			\pause
-			Wenn $\Delta_1(c)$ nicht definiert ist, bezeichnet man $c$ als \textbf{Endkonfiguration} und die TM \textbf{hält}.
-		\end{Definition}
-	\end{frame}
-	
-	\begin{frame}{Berechnungen}
-		\begin{Definition}
-			Eine Berechnung ist eine Folge von Konfigurationen $(c_0, c_1, ..., c_t)$ bei der gilt $$c_{i+1} = \Delta_1(c_i)$$ \pause
-			Es gibt endliche, haltende (endet in einer Endkonfiguration) und unendliche Berechnungen.
-			\bigskip
-			
-			\pause
-			Induktiv definiert man $\Delta_t(c) , t\in\N_0$ als die Konfiguration, welche nach $t$ Berechnungsschritten erreicht werden kann und $\Delta_*(c)$ als Endkonfiguration, die von $c$ aus erreicht wird (falls die Berechnung endet).
-		\end{Definition}
-	\end{frame}
-}
+\begin{frame}{Konfiguration}
+	\begin{Definition}
+		Als \textbf{Konfiguration} $ c =(z,b,p)$ bezeichnen wir den Zustand einer Turing-Maschine zu einem Zeitpunkt. Dabei ist 
+		\begin{itemize}
+			\item $z\in Z$ der Zustand
+			\item $b: \Z\to X$ die Bandbeschriftung
+			\item $p\in \Z$ die Position des Zeigers.
+		\end{itemize}
+	\end{Definition}
+\end{frame}
+
+\begin{frame}{Berechnungsschritte}
+	\begin{Definition}
+		In einem Berechnungsschritt geht eine TM aus einer Konfiguration $c$ 
+		in die Konfiguration $$\Delta_1(c) := c' = (z',b',p')$$ über, wobei gilt:
+		\begin{itemize}[<+->]
+			\item $z' = f(z,b(p))$
+			\item $\forall i\in \Z: b'(i) =
+			\begin{cases}
+			b(i) & \text{ falls } i\not=p \\
+			g(z,b(p)) & \text{ falls } i=p
+			\end{cases}$
+			\item $p' = p + m(z,b(p))$
+		\end{itemize}
+		\bigskip
+		
+		\pause
+		Wenn $\Delta_1(c)$ nicht definiert ist, bezeichnet man $c$ als \textbf{Endkonfiguration} und die TM \textbf{hält}.
+	\end{Definition}
+\end{frame}
+
+\begin{frame}{Berechnungen}
+	\begin{Definition}
+		Eine Berechnung ist eine Folge von Konfigurationen $(c_0, c_1, ..., c_t)$ bei der gilt $$c_{i+1} = \Delta_1(c_i)$$ \pause
+		Es gibt endliche, haltende (endet in einer Endkonfiguration) und unendliche Berechnungen.
+		\bigskip
+		
+		\pause
+		Induktiv definiert man $\Delta_t(c) , t\in\N_0$ als die Konfiguration, welche nach $t$ Berechnungsschritten erreicht werden kann und $\Delta_*(c)$ als Endkonfiguration, die von $c$ aus erreicht wird (falls die Berechnung endet).
+	\end{Definition}
+\end{frame}
 
 
 

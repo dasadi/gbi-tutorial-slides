@@ -19,18 +19,18 @@
 %% -----------------------------------------------------------------------------
 
 \subsection{Definitionen}
-\begin{frame}{Asymptotisches Wachstum}
-	\begin{Definition}
-		Zwei Funktionen $f,g: \N_0 \to \R_0^+$ wachsen asymptotisch gleich schnell, wenn es zwei Konstanten $c, c' \in \R^+$ gibt, so dass gilt $$\exists n_0 \in \N_0: \ \forall n \geq n_0: \ c \* f(n) \leq g(n) \leq c' \* f(n) $$
-		Man schreibt dafür 
-		\begin{align*}
-			f &\asymp g \\
-			\textbf{oder} \quad f(n) &\asymp g(n) 
-			% Hashtag: „n^2“ ist ein Term und keine Funktion etc... Man müsse doch [n \mapsto n^2] schreiben... VL erlaubt ersteres aber auch.
-		\end{align*}
-	\end{Definition} \pause
-	Diese Relation ist eine Äquivalenzrelation!
-\end{frame}
+%\begin{frame}{Asymptotisches Wachstum}
+%	\begin{Definition}
+%		Zwei Funktionen $f,g: \N_0 \to \R_0^+$ wachsen asymptotisch gleich schnell, wenn es zwei Konstanten $c, c' \in \R^+$ gibt, so dass gilt $$\exists n_0 \in \N_0: \ \forall n \geq n_0: \ c \* f(n) \leq g(n) \leq c' \* f(n) $$
+%		Man schreibt dafür 
+%		\begin{align*}
+%			f &\asymp g \\
+%			\textbf{oder} \quad f(n) &\asymp g(n) 
+%			% Hashtag: „n^2“ ist ein Term und keine Funktion etc... Man müsse doch [n \mapsto n^2] schreiben... VL erlaubt ersteres aber auch.
+%		\end{align*}
+%	\end{Definition} \pause
+%	Diese Relation ist eine Äquivalenzrelation!
+%\end{frame}
 
 \begin{frame}{Landau-Notation I}
 	\begin{Definition}
@@ -41,7 +41,6 @@
 	\only<1|handout:1>{\includegraphics[scale=0.6]{laufzeit/theta1}}
 	\only<2|handout:2>{\includegraphics[scale=0.6]{laufzeit/theta2}}
 \end{frame}
-
 \begin{frame}{Beispiel 1}
 	Seien \quad $f(n) := 2 \cdot n^2 + n, \qquad g(n) := n^2.$ \\
 	\textbf{Behauptung:} \quad $ f \in \Th{g} $. \\ 
@@ -181,9 +180,9 @@
 	\begin{block}{Herleitung}
 		\begin{align*}
 			a^{\log_b n} &= \left( b ^{\log_b a} \right) ^{\log_b n}\\
-						 &= b^{\log_b a \, \cdot \, \log_b n}\\
-						 &= \left( b^{\log_b n} \right) ^{\log_b a}\\
-						 &= n^{\log_b a}
+						&= b^{\log_b a \, \cdot \, \log_b n}\\
+						&= \left( b^{\log_b n} \right) ^{\log_b a}\\
+						&= n^{\log_b a}
 		\end{align*}
 	\end{block}
 \end{frame}

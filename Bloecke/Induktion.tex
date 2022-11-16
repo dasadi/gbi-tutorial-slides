@@ -71,7 +71,8 @@
 	\FalseQuestionE{Ich benutze für jeden Beweis Induktion.}{Mit einem Schraubenzieher bekommt man keinen Nagel in die Wand.}
 \end{frame}
 
-\input{../Bloecke/Induktion_Vogel.tex}
+% removed because part of exercise sheet
+% \input{../Bloecke/Induktion_Vogel.tex}
 
 % Induktion Übung
 
@@ -83,7 +84,7 @@
 	\end{block}
 	\pause
 	\begin{block}{Induktionsvoraussetzung}
-		Für ein $n \in \N_0$ gelte: $\sum_{k=0}^{n}{\frac{1}{2^k}} = 2 \* \tuple{1 - \frac{1}{2^{n+1}}}$.
+		Für ein beliebiges aber festes $n \in \N_+$ gelte: $\sum_{k=0}^{n}{\frac{1}{2^k}} = 2 \* \tuple{1 - \frac{1}{2^{n+1}}}$.
 	\end{block}
 \end{frame}
 
@@ -104,7 +105,7 @@
 % Induktion Wörter Länge
 \begin{frame}{Und jetzt mit Wörtern}
 	\begin{block}{Behauptung}
-		Seien $A, B$ zwei beliebige Alphabete. Definiere die Funktion $f \from A^* \functionto A^*$,
+		Seien $A, B$ zwei beliebige Alphabete. Definiere die Funktion $f \from A^* \functionto B^*$,
 		\begin{align*}
 			f(\eps) &:= \eps \\
 			\text{Für } w \in A^*, \mu \in A: \quad f(\mu \* w) &:= 

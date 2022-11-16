@@ -13,40 +13,37 @@
 \section{Rückblick}
 
 \begin{frame}{Zu Übungsblatt \#7}
-	Bisheriger Schnitt: \quad 12.5 / 22~P
+	Schnitt: \quad 15,6 / 20~P
 
 	\begin{itemize}[<+->]
-		\item Das Übungsblatt bekommt ihr voraussichtlich heute Abend noch zurück
-		\item Häufigste Fehler: heute + nächste Woche
+		\item 14 von 23 Tutanden haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ihr habt alle pünktlich abgegeben :)
+		\item Gut gemacht, das Blatt ist sehr gut ausgefallen!
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Zu Übungsblatt \#7}
 	Ein häufiger Fehler:
 	\begin{itemize}[<+->]
-		\item Aufgabe 7.1: Es sei $A = \left\{\word a,\word b\right\}$. Zeigen Sie, dass die folgenden Gleichungen für $L\subseteq A^*$ jeweils mindestens eine Lösung besitzen:
-		\item[a)] $L = \left\{\varepsilon\right\} \cup \left\{a\right\} \cdot L \cdot \left\{b\right\}$
-		\item[] Intuitiv oder durch Ausprobieren: $L=\left\{\word a^n\word b^n \middle| n \in \mathbb N_ 0\right\}$ ist eine Lösung.
-		\item[] Das zeigen wir, indem wir die obige Gleichung für dieses $L$ beweisen:
-		\item[``$\subseteq$''] Sei $w \in L$. Dann ist $w=\word a^n\word b^n$ für ein festes $n\in\mathbb N_0$.
-		\item[] \textbf{Falls $n=0$}, dann ist $w=\varepsilon$ und damit $w \in \left\{\varepsilon\right\} \cup \left\{a\right\} \cdot L \cdot \left\{b\right\}$
-		\item[] \textbf{Falls $n\not=0$}, dann ist $n \geq 1$ und damit $w = \word a \cdot \word a^{n-1}\word b^{n-1} \cdot \word b$.
-		\item[] \quad Wegen $\word a^{n-1}\word b^{n-1} \in L$ folgt $w \in \left\{\varepsilon\right\} \cup \left\{a\right\} \cdot L \cdot \left\{b\right\}$.
+		\item Aufgabe 7.3d): Fallunterscheidung für $m(0) = 1$ notwendig: 
+		$$ M_{m'} = 
+		\casesl{M_m \setminus \set{(0, m(0)), (m(0)-1, last(m))} \cup \set{(0,m(0)-1)}, & m(0) > 1 \\
+				M_m, & m(0) = 1}$$
+		\item Im Allgemeinen: Bei Definitionen \textbf{keine Pünktchen} („...“) verwenden 
+		\item Im Allgemeinen: Bei Variablen genau angeben, aus welcher Menge: z.B. $a\elem \N_+$
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Zu Übungsblatt \#7}
-	\begin{itemize}
-		\item Aufgabe 7.1: Es sei $A = \left\{\word a,\word b\right\}$. Zeigen Sie, dass die folgenden Gleichungen für $L\subseteq A^*$ jeweils mindestens eine Lösung besitzen:
-		\item[a)] $L = \left\{\varepsilon\right\} \cup \left\{a\right\} \cdot L \cdot \left\{b\right\}$
-	\end{itemize}
+\begin{frame}{Organisatorisches}
 	\begin{itemize}[<+->]
-		\item[``$\supseteq$'] Sei $w \in \left\{\varepsilon\right\} \cup \left\{a\right\} \cdot L \cdot \left\{b\right\}$
-		\item[] \textbf{Falls $w \in \left\{\varepsilon\right\}$}, dann ist $w=\varepsilon=\word a^0\word b^0$ und damit $w \in L$
-		\item[] \textbf{Falls $w \in \left\{a\right\} \cdot L \cdot \left\{b\right\}$}, dann existiert ein $w' \in L$ sodass $w=\word a \cdot w' \cdot \word b$.
-		\item[] \quad Nach Def. von $L$ existiert dann ein $n\in \mathbb N_0$ sodass $w'=\word a^n\word b^n$.
-		\item[] \quad Dann ist $w = \word a \cdot w' \cdot \word b ) \word a \cdot \word a^n\word b^n \cdot b = \word a^{n+1} \word b^{n+1} \in L$.
-		\item[] Damit ist die Gleichung gezeigt. \qed
+		\item Bestehensgrenze Blatt 1-6: 52~P
+		\item Übungsblatt 9: Abgabe auf 14.Januar 2022 verschoben\\
+			\quad \impl Kleines Weihnachtsgeschenk
+		\item Am 7. Januar 2022 aber schon wieder Vorlesungen\\
+			\quad \impl in GBI ausnahmsweise online
+		\item Besonders bei Einzelabgaben darauf achten, dass es nicht zu viele Ähnlichkeiten zwischen den Abgaben gibt
 	\end{itemize}
 \end{frame}
 
@@ -66,13 +63,14 @@
 
 \framePrevEpisode
 
-\begin{frame}{Kahoot!}
+\begin{frame}{Rückblick: Kontextfreie Grammatiken}
 	\begin{itemize}[<+->]
-		\item Kahoot! ist ein anonymes Online-Quiz
-		\item Ihr bekommt Punkte für schnelles und richtiges raten
-		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
-		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-9-einstieg/6dd1cef1-785f-4e61-a11b-bf515867d02c}
+		\item Ein Vier-Tupel: $G = (N, T, S, P)$
+		\item[] z.B. $N=\left\{X,Y\right\}, T=\left\{\word{a}, \word{b}\right\}, S=X, P=\left\{X \to \word a Y, Y \to Y \mid \word b \right\}$
+		\item Produktionen definieren Ersetzungen eines Nichtterminals mit Wörtern über $N \cup T$
+		\item Wir wenden Produktionen in Ableitungsschritten an: $v \Rightarrow w, v \Rightarrow^* w$
+		\item[] z.B. $X \derives \word a Y$, $Y \derives Y$, $Y \derives^{2020} Y$, $\word{aaa}Y\word{bbb} \derives \word{aaabbbb}$, $X \derives^2 \word{ab}$ oder $X \derives^\ast \word{ab}$
+		\item $L(G)$ sind alle aus $S$ ableitbaren Wörter über $T$ (die also nur aus Terminalsymbolen bestehen)
 	\end{itemize}
 \end{frame}
 
@@ -95,6 +93,8 @@
 %	%TODO: Eine W/F-Frage zu freien/gebundenen Variablen
 %	%TODO: Eine W/F-Frage zu PL Substitution
 %\end{frame}	
+
+\input{../Bloecke/Relationen2.tex}
 
 \input{../Bloecke/Praedikatenlogik.tex}
 

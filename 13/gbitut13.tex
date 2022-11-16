@@ -12,48 +12,54 @@
 
 \section{Rückblick}
 
-\begin{frame}{Zu Übungsblatt \#11}
-	Bisheriger Schnitt: \quad 12.7 / 21~P
+\begin{frame}{Zu Übungsblatt \#10}
+	Bisheriger Schnitt: \quad 9.3 / 21~P
 
-	\begin{itemize}
-		\item 13 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
-		\item Wenn ihr Fragen habt, meldet euch bei mir
+	\begin{itemize}[<+->]
+		\item 12 von 23 TutandInnen haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ihr habt alle pünktlich abgegeben :)
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Zu Übungsblatt \#11}
+\begin{frame}{Zu Übungsblatt \#10}
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
-		\item[1d)] ``Wie viele Knoten dürfen \textit{höchstens} in $F$ sein, damit ...''
-		\implitem Begründen, warum für $|F| = 2$ nicht immer ein sicherer Weg existiert \textbf{und} dass für $|F|=1$ immer ein sicherer Weg existiert.
-		\item[3)] Aussagen im O-Kalkül begründet man mit den \textit{Rechenregeln aus der Vorlesung} oder anhand der \textit{Definitionen von asymptotischen Wachstum}.
-		\item Dabei \textbf{präzise} sein, z.B.: $2^{\sqrt{n}}$ hat nicht die Form ``$a^n$ für ein $a\in \mathbb{R}^+$''.
-		\item $f_1 \preceq f_2$ bedeutet nicht unbedingt $f_2 \not\preceq f_1$
-		\item \textbf{Auf keinen Fall} $f=\Oh{g}$ schreiben! $\Oh{g}$ ist eine Menge von Funktionen und man schreibt $f\in\Oh{g}$
-		\item[*)] ``Laut Tutorium'' ist keine gute Begründung \smiley
+		\item[4a)] ``Geben Sie ein Schema an''
+		\implitem Ein Schema muss \textbf{formal} korrekt angegeben werden
+		\item[5a)] Beim Abarbeiten einer Zeichenfolge darauf achten, in welchen Zustand, wenn notwendiges Zeichen nicht als nächstes kommt
+		\item[5b)] Ein Alphabet ist nach Definition eine nichtleere, \textbf{endliche} Menge
+		\implitem Argumentation mit unendlich vielen Übergängen/Zuständen \textbf{falsch}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Schwarzes Brett}
-	\begin{itemize}
-		\item Korrektur: Ein zusammenhängender ungerichteter Graph ist genau dann ein Baum, wenn es in ihm keine echten Kreise \textit{und keine Schleifen} gibt.
-		\item Anmeldung \textbf{Klausur} $+$ \textbf{Übungsschein} nicht vergessen!
-		\item Erinnerung: Klausur am \Klausurtermin
-		\item Bonus: Übungsstunde am 22. Februar 2021, 12:00 - 13:30 Uhr
+\begin{frame}{Zu Übungsblatt \#10 - Aufgabe 2}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{UB10_2.png}
+	\begin{itemize}[<+->]
+		\item[b)] Wie kann die oben vorgestellte Konstruktion erweitert werden, sodass Produktionen, bei denen mehrere Terminalsymbole erzeugt werden, in A ebenfalls korrekt abgebildet werden? Beschreiben Sie die Ergänzung formal korrekt und zeichnen Sie als Beispiel das Resultat (ausschließlich) für die Produktion $(S \to \word{abab}A)$. Gehen Sie dabei von $T = \{a,b,c\}$ aus.
 	\end{itemize}
 \end{frame}
+
 
 \framePrevEpisode
 
-\begin{frame}{Kahoot!}
-	\begin{itemize}[<+->]
-		\item Kahoot! ist ein anonymes Online-Quiz
-		\item Ihr bekommt Punkte für schnelles und richtiges raten
-		\item Ihr könnt mit eurem Handy oder PC über \url{https://kahoot.it} mitspielen
-		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-13-einstieg/9cfc29f7-2261-49ce-974b-9ca3b305c81b}
-	\end{itemize}
+\begin{frame}{Algorithmen}
+	\begin{block}{Definition}
+		Ein Algorithmus ist...
+		\begin{itemize}
+			\item Eine endliche Beschreibung
+			\item aus elementaren Anweisungen, 
+			\item die deterministisch ($=$ ohne Zufall!) ausgeführt werden.\\
+				{\small (Manchmal auch gemischt mit (Pseudo-)Zufallselementen)}
+			\item Eine endliche Eingabe gibt endliche Ausgabe...
+			\item in endlich vielen Schritten.
+			\item Das funktioniert für beliebig große Eingaben und
+			\item ist nachvollziehbar bzw. verständlich.
+		\end{itemize}
+	\end{block}
+	\pause
+	Woher wissen wir, ob ein Algorithmus korrekt ist? \pause \impl Hoare-Kalkül
 \end{frame}
 
 %\begin{frame}[t]{Wahr oder Falsch?}
@@ -63,43 +69,26 @@
 %	\FalseQuestionE{Mit endlichen Automaten kann jede beliebige Sprache erkannt \\ werden.}{Tatsächlich ist die Menge der akzeptierbaren Sprachen sogar sehr eingeschränkt.}	
 %\end{frame}
 
-\input{../Bloecke/Akzeptoren}
+\input{../Bloecke/Hoare.tex}
 
-\input{../Bloecke/Turing}
-
-\input{../Bloecke/TMKomplexitaet}
-
-\input{../Bloecke/Regulaer}
-
-\input{../Bloecke/RechtslineareGrammatiken}
-
-\begin{frame}{Turingmaschinen: Klausur}
-	Noch ein Hinweis zum Schluss:\\
-	Bisher kam in {\tiny fast} \textbf{jeder} Klausur eine Aufgabe zu Turingmaschinen dran.\\
-	Diese gibt meist relativ viele Punkte.\\
-	
-	\bigskip
-	Es ist hochwahrscheinlich, dass auch dieses Mal wieder eine TM-Aufgabe drankommt.\\
-	\textbf{Also übt das!} Hier zählt vor allem Geschwindigkeit (und Präzision).
-\end{frame}
+\input{../Bloecke/GrossO.tex}
 
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
-			\item Turingmaschinen
-			\item Komplexität
-			\item Entscheidbarkeit -- Wir können alles. Außer Halteproblem. Und so Zeug.
-			\item Reguläre Ausdrücke
-			\item Rechtslineare Grammatiken
+			\item Korrektheit von Algorithmen zeigen
+			\item Asymptotisches Wachstum
 		\end{itemize}
 	\end{block}
+
 	
-	%\begin{block}{Was nächstes Mal kommt}
-	%	\begin{itemize}
-	%		\item Reguläre Ausdrücke
-	%		\item Rechtslineare Grammatiken
-	%	\end{itemize}
-	%\end{block}
+	\begin{block}{Was nächstes Mal kommt}
+		\begin{itemize}
+			\item O-Kalkül - Rechnen
+			\item Endlich: Graphen
+			\item verschiedene Darstellungsformen von Graphen
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 % TODO ?

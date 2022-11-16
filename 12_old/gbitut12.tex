@@ -1,0 +1,233 @@
+%beamer
+
+% TODO:
+% - VL-Folien einarbeiten
+% - Weniger f_* etc. Theorie, mehr Aufgaben zwischendrin und zu Akzeptoren
+% - Bessere Hinleitung zu Akzeptoren
+
+% Comment/uncomment this line to toggle handout mode
+\newcommand{\handout}{}
+
+\input{../framework/PraeambelTut.tex}
+
+\morescalingdelimiters
+
+\begin{document}
+\starttut{12}
+
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#10}
+	Bisheriger Schnitt: \quad 15.6 / 21~P
+
+	\begin{itemize}
+		\item Sehr schöne Abgaben!
+		\item 15 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
+		\item Wenn ihr Fragen habt, meldet euch bei mir
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#10}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item[1c)] ``\textit{Tipp. } Um eine Aussage der Form $A \rightarrow B$ zu zeigen, kann es manchmal praktischer sein, es stattdessen für $(\alnot B) \rightarrow (\alnot A)$''
+		\item Kontraposition: die Formeln $A \rightarrow B$ und $(\alnot B) \rightarrow (\alnot A)$ sind logisch äquivalent.
+		\item $A \rightarrow B$ und $(\alnot A) \rightarrow (\alnot B)$ sind in der Regel \textbf{nicht} logisch äquivalent!
+		\item[2a)] Graphen stellen Knoten durch Kreise dar. Wenn ein Knoten ein Paar repräsentiert, schreibt man das Paar mit seinen Klammern.
+		\item[2d)] Nicht jede bijektive Funktion ist ein Homomorphismus.
+	\end{itemize}
+\end{frame}
+
+\mycomment{ % keine Probeklausur im WS20/21
+\daniel{
+\begin{frame}{Probeklausur}
+	\daniel{Schnitt: \quad \thassedaniel{XX}{22.8}~/~38~P \quad $\hat{=}$ Note \thassedaniel{XX}{3.2} \\}
+	\begin{columns}[T] 
+		\hspace{.5\baselineskip}
+		\begin{column}[T]{.30\textwidth} 
+			Skala: \\
+			\begin{tabular}{|r|l|}
+				\hline
+				Note & Punkte \\
+				\hline
+				5.0	& \hphantom{0}0.0 – 18.5 	\\ \hline
+				4.0 & 19.0 – 20.0	\\ \hline
+				3.7 & 20.5 – 22.0	\\ \hline
+				3.3	& 22.5 – 24.0	\\ \hline
+				3.0	& 24.5 – 26.0	\\ \hline
+				2.7	& 26.5 – 28.0	\\ \hline
+				2.3	& 28.5 – 30.0	\\ \hline
+				2.0	& 30.5 – 32.0   \\ \hline
+				1.7	& 32.5 – 24.0	\\ \hline
+				1.3	& 34.5 – 36.0	\\ \hline
+				1.0	& 36.5 – 38.0	\\ \hline
+			\end{tabular}
+		\end{column}
+		\hspace{-\baselineskip}
+		\begin{column}[T]{.68\textwidth} 
+			\begin{itemize}
+				\item Wer regelmäßig Blätter machte, hatte mehr Punkte! :P {\small (As promised...)}
+				\item Generell: Schaut euch alte Blätter an und vor allem, \alert{was ich in rot dazugekritzelt} hab. \\
+				\impl Manche wiederholen ihre Fehler.
+				\item Aufgabenstellung \textbf{genau} lesen! \\
+				Z.~B.: „Geben Sie an...“ – Ergebnis langt! \\ \impl Keine Zeit verschwenden! 
+				
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+}
+
+\mycomment{
+	\begin{frame}{Schwarzes Brett}
+		\begin{itemize}
+			\item Es wird insgesamt \textbf{6~Blätter} geben \impl Gesamtpunkte $=$ 205~P
+			\implitem Wer \textbf{$\geq$ 102.5~P} hat, \textbf{hat den Schein garantiert}. \\
+			{\small (Wer etwas weniger hat: vielleicht auch, keine Ahnung. Stay tuned.)}
+			\item Es wird ein \textbf{Bonusübungsblatt} geben, auf dem ihr zusätzl. Punkte sammeln könnt (aber nicht müsst). \\
+			Das wird dann (nach Ende der VL-Zeit) beim Übungsleiter Zenkel hinterlegt, sobald korrigiert.
+		\end{itemize}
+	\end{frame}
+}
+}
+
+\framePrevEpisode
+
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-12-einstieg/b0828b50-3aba-45b9-90ac-d39d64ec7ce6}
+	\end{itemize}
+\end{frame}
+
+\mycomment{
+\begin{frame}{Rückblick: Laufzeitabschätzungen}
+	\begin{itemize}[<+->]
+		\item Asymptotisches Wachstum
+		\item $O, \Theta, \Omega$
+		\item Beweisverfahren
+		\item Rechenregeln im O-Kalkül
+	\end{itemize}
+
+	\pause
+	\begin{block}{Typische Laufzeiten}
+		Lineare Suche: $\Th{n}$ \\
+		Binäre Suche:  $\Th{\log n}$ \\
+		Potenzmenge berechnen: $\Th{2^n}$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Rückblick}
+	\centering
+	\includegraphics[scale=0.5]{laufzeit/polyVsExp}
+\end{frame}
+
+\begin{frame}[t]{Wahr oder Falsch?}
+	\TrueQuestionE{$x^4 \in \Oh{{(x^3)}^3}$}{ $ {(x^3)}^3 = x^9$}
+	\FalseQuestionE{$\sqrt{n} \in \Om{2^n}$}{}
+	\TrueQuestionE{$log_{5000} n \in \Th{\log_2{n^4}}$}{ $ \log_2{n^4} = 4 \cdot \log_2{n}$}
+	%
+	% ACHTUNG: Sehr aufwendig zu erklären. Besser weglassen, um Zeit zu sparen!
+	\FalseQuestionE{$O(f_1) + f_2 = O(f_1 + f_2)$}{Z.~B.: \\ $\Oh{n} + 4 = \set{f(n) + 4 \Mid f(n) \in \Oh{n}} \neq \set{f(n) \Mid f(n) \in \Oh{n}} = \Oh{n+4}$. \\ \textbf{Aber} es gilt: $O(f_1) + O(f_2) = O(f_1 + f_2)$}
+\end{frame}
+
+\begin{frame}[t]{Wahr oder Falsch?}
+	\FalseQuestion{Für zwei Funktionen $f, g$ gilt immer $f \preceq g$ oder $f \succeq g$.}
+	\medskip
+	
+	\visible<2>{
+		Es gibt unvergleichbare Funktionen! Beispiel:
+		\begin{align*}
+		f(n) &=
+		\begin{cases}
+		1, & \text{ falls $n$ gerade} \\
+		n, & \text{ falls $n$ ungerade} \\
+		\end{cases} \\
+		g(n) &=
+		\begin{cases}
+		n, & \text{ falls $n$ gerade} \\
+		1, & \text{ falls $n$ ungerade} \\
+		\end{cases} \\
+		\end{align*}
+		Es gilt \textbf{nicht} $g\preceq f$, es gilt \textbf{nicht} $f\preceq
+		g$ und es gilt \textbf{erst recht nicht} $f\asymp g$.
+	}
+\end{frame}
+}
+
+\input{../Bloecke/GrossO}
+
+\input{../Bloecke/MasterTheorem}
+
+\input{../Bloecke/Automaten}
+
+% next time \input{../Bloecke/Akzeptoren}
+
+% ---------
+
+\mycomment{
+% WiSe 10/11 Aufgabe 6 c 
+\begin{frame}{Übung: Akzeptoren}
+	Die Sprache $L\subseteq \{\word a,\word b\}^\ast $ sei definiert als die Menge aller Wörter $w$, die folgende Bedingungen erfüllen:
+	\begin{align*}
+	N_{\word b}(w) &> N_{\word a}(w)\\ 
+	\forall v_1,v_2 \in \{\word a,\word b\}^\ast : \qquad w &\neq v_1 \word{bb} v_2 
+	\end{align*}
+	
+	Gebt einen endlichen Akzeptor an, der $L$ erkennt. \\
+	
+	\bigskip
+	\pause
+	\begin{block}{Tipps}
+		\begin{itemize}[<+->]
+			\item Die zweite Bedingung bedeutet: Das Wort darf nirgends zwei \word b hintereinander enthalten.
+			\item Was passiert, wenn das Wort mit einem \word a beginnt?\\
+			Kann das Wort noch akzeptiert werden?
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Übung: Akzeptoren: Lösung}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{automaten/Loesung2.pdf}
+	\end{figure}
+\end{frame}
+}
+
+\begin{frame}	
+	\begin{block}{Was ihr nun wissen solltet}
+		\begin{itemize}
+			\item Wie man die Laufzeit von Algorithmen misst
+			\item Wie man rekursive Laufzeiten mastert
+			\item Endlich: Automaten!
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Was nächstes Mal kommt}
+		\begin{itemize}
+			\item Mehr zu Automaten
+			\item ... und wie man damit Wörter akzeptiert/ablehnt
+			\item Turingmaschinen
+			%\item Ein Regelwerk für einen Ausdruck -- Reguläre Ausdrücke
+			%\item Rechtslineare Grammatiken
+			%\item Turingmaschinen -- mächtiger wird es nicht mehr!
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\xkcdframevert{1319}{Danke für eure Aufmerksamkeit! \smiley}{2.5}
+%\lastframe{0.6}{30}{xkcd/automation_1319.png}{http://www.xkcd.com/1319}
+%\xkcdframe{0.5}{30}{xkcd/houston_1438.png}{http://www.xkcd.com/1438}{Oh, hi mom. No, nothing important, just work.}
+
+
+
+\slideThanks
+
+\end{document}

@@ -10,47 +10,31 @@
 \begin{document}
 \starttut{11}
 
+\section{Organisatorisches}
+\begin{frame}{Klausuranmeldung}
+	\begin{itemize}
+		\item Prüfungstermin: 07. März 2022, 15:00-17:00 Uhr
+		\item Prüfungsanmeldung ab \textbf{jetzt} im Campusportal möglich
+		\pause
+		\item Übungsschein: Anmeldung ab \textbf{jetzt} im Campusportal möglich
+		\item Anmelden bis \textbf{06. März 2022}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Neue Corona-Regeln}
+	\begin{itemize}
+		\item \textbf{FFP2-Maskenpflicht} in allen KIT-Gebäuden
+		\implitem unter anderem in Vorlesung, Übung und Tutorium nur Zutritt mit FFP2- oder vergleichbarer Maske
+		\item Die restlichen Regeln gelten weiterhin
+	\end{itemize}
+\end{frame}
+
 \section{Rückblick}
 \begin{frame}{Zu Übungsblatt \#9}
-	Bisheriger Schnitt: \quad 12 / 17~P
-
-	\begin{itemize}
-		\item viele schöne Abgaben, weiter so!
-		\item 16 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
-		\item Wenn ihr Fragen habt, meldet euch bei mir
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Zu Übungsblatt \#9}
-	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
-		\item[1)] Man schreibt $D=...$, nicht $I(D)=...$
-		\item[1d)] bei Substitutionen keine Klammern verändern
-		\item[2b)] für $n \in \mathbb{N}_0$, $f : A \functionto B$, $x \in A$ ist $f^{n+1}(x)=(f^n \circ f)(x) = f^n(f(x))$...
-		\item[] ...und in der Regel nicht $f^{n+1}(x)=f^n(x)\cdot f(x)$
-		\item[3d)] Schaut euch die Musterlösung an
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Klausurvorbereitung}
-	1. Materialien anschauen
-	\begin{itemize}
-		\item Folien der Vorlesung
-		\item Skript der Vorlesung
-		\item Folien des Tutoriums
-	\end{itemize}
-
-	\pause
-	2. Zusammenfassung oder Karteikarten schreiben \\
-
-	\pause
-	3. Gaaanz viele Aufgaben rechnen
-	\begin{itemize}
-		\item Übungsblätter nochmal bearbeiten
-		\item Übungsblätter aus vergangenen Jahren bearbeiten
-		\item \textbf{$\rightarrow$ Altklausuren $\leftarrow$} rechnen
-		\item Aufgabenarchiv: \url{http://gbi.ira.uka.de/archiv/}
+		\item Ich habe es leider nicht geschafft alle Blätter zu korrigieren
+		\implitem Rückgabe der Blätter nächste Woche
+		\item Musterlösung trotzdem im \ILIAS verfügbar
 	\end{itemize}
 \end{frame}
 
@@ -74,15 +58,6 @@
 
 \framePrevEpisode
 
-\begin{frame}{Kahoot!}
-	\begin{itemize}[<+->]
-		\item Kahoot! ist ein anonymes Online-Quiz
-		\item Ihr bekommt Punkte für schnelles und richtiges raten
-		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
-		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-11-einstieg/7a9bac61-e7d5-455b-9b84-0623e2cf0d7f}
-	\end{itemize}
-\end{frame}
 
 %\begin{frame}{Rückblick: Graphen}
 %	\begin{itemize}[<+->]
@@ -120,76 +95,31 @@
 %	\FalseQuestionE{$G$ ist ein DAG.}{$(2,3,2)$ ist ein Zyklus in $G$.}
 %\end{frame}
 
-\begin{frame}{Rückblick: Graphen}
+\begin{frame}{Rückblick: Reguläre Ausdrücke}
+	Reuläre Ausdrücke bestehen aus:
 	\begin{itemize}[<+->]
-		\item Ein \textbf{Graph} ist ein Paar $G=(V,E)$ mit einer endlichen, nichtleeren \textbf{Knotenmenge} $V$ und einer \textbf{Kantenmenge} $E$.
-		\item \textbf{gerichteter Graph}: $E \subseteq V \times V$
-		\item \textbf{ungerichteter Graph}: $E = \left\{ \left\{u,v\right\} \middle| u \text{ ist mit } v \text{ verbunden }\right\}$
-		\item Man kann einen Graphen durch das Paar $G=(V,E)$ oder als Zeichnung angeben
-		\item Ein \textbf{Teilgraph} ist ein Graph $G'=(V',E')$ mit $V' \subseteq V$, $E' \subseteq E \cap V' \times V'$ (bzw. $E' \subset E \cap 2^{V'}$)
-		\item Eine Schlinge ist eine Kante, die von einem Knoten zu sich selbst führt.
+		\item \hstretchto{\q15uad}{dem leeren Ausdruck $\rx O$} $\lang{\rx{O}} = \emptyset$\pause
+		\item \hstretchto{\q15uad}{den einzelnen Symbolen $x \in A$}  $\lang{x}=\{x\}$ \pause
+		\item zwei regulären Ausdrücken $R_1$ und $R_2$ mit\\ 
+			\hstretchto{\q8uad}{$\rx(R_1 R_2\rx)$} $\lang{R_1 R_2} = \lang{R_1} \cdot \lang{R_2}$\\
+			\hstretchto{\q8uad}{$\rx(R_1\rx|R_2\rx)$} $\lang{R_1 \rx| R_2} = \lang{R_1} \cup \lang{R_2}$ \pause
+		\item \hstretchto{\q8uad}{einem Stern $R\rx*$} $\lang{R\rx*} = \lang{R}^*$\pause
 	\end{itemize}
 \end{frame}
-
-\input{../Bloecke/Graphen}
-
-\input{../Bloecke/Graphen2}
-
-\mycomment{
-	\begin{frame}{Wiederholung: Adjazenzmatrix}
-		\begin{Definition}
-			Die \textbf{Adjazenzmatrix} eines Graphen $(V, E)$ mit $n$ Knoten ist die Matrix $A\in \{0,1\}^n\times\{0,1\}^n$ mit $$ A_{ij} = \begin{cases} 0 & (i,j) \notin E \\ 1 & (i,j) \in E \end{cases} $$ 
-		\end{Definition}
-	\end{frame}
-}
-
-\begin{frame}{Übung: Adjazenzmatrix}
-	\begin{columns}
-		\column{0.4\linewidth}
-		$$ A = 
-		\begin{pmatrix} 
-		1 & 1 & 0 & 1 & 0 & 0 \\ 
-		0 & 0 & 0 & 1 & 0 & 0 \\ 
-		0 & 1 & 1 & 1 & 0 & 0 \\ 
-		0 & 0 & 1 & 0 & 0 & 0 \\
-		1 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & 0 & 0 \\
-		\end{pmatrix} $$
-		
-		\column{0.4\linewidth}
-		\only<7->{
-			\begin{tikzpicture}[->,>=stealth,baseline=-5mm]
-			\matrix[matrix of math nodes,nodes={draw,circle,minimum size=6mm,inner sep=2pt},row sep=13mm,column sep=10mm,ampersand replacement=\&]
-			{
-				|(0)| 0 \& |(1)| 1 \& |(2)| 2 \\
-				|(4)| 4 \& |(3)| 3 \& |(5)| 5 \\
-			};
-			\draw  (0) -- (1);
-			\draw  (0) -- (3);
-			\draw  (4) -- (0);
-			\draw  (1) -- (3);
-			\draw  (2)  to [bend left] (3);
-			\draw  (2) -- (1);
-			\draw  (3) to [bend left] (2);
-			\path  (2) edge [loop right] ();
-			\path  (0) edge [loop left] ();
-			\end{tikzpicture}
-		}
-	\end{columns}
-	
-	\bigskip
-	Was kann man an der Adjazenzmatrix ablesen?
+\begin{frame}{Aufgabe: Sprachen regulärer Ausdrücke}
 	\begin{itemize}
-		\item Gerichtet oder ungerichtet? \\ \pause
-		\impl gerichtet (weil $A$ nicht symm.) \pause
-		\item Schlingen? \\ \pause
-		\impl Auf der Diagonalen von $A$: \quad Knoten 0, 2 \pause
-		\item Zusammenhängend? \\ \pause
-		\impl Nein (5 ist isoliert). 
+		\item $\lang{\rx{(a|b)*abb(a|b)*}} = \visible<2-|handout:2>{\{\word a, \word b\}^* \cdot \{\word a\word b\word b\} \cdot \{\word a, \word b\}^*}$
+		\item $\lang{\rx{a**}} = \visible<3-|handout:2>{\{\word a\}^*}$
+		\item $\lang{\visible<4-|handout:2>{R\rx{(}R\rx{)*}}} = \lang{R}^+$ \quad (für bel. reg. Ausdruck $R$)
+		%\item $\lang{\visible<5-|handout:2>{\rx{O*}}} = \{\eps\}$
+		\item $\lang{\visible<5-|handout:2>{\rx{a*ba*ba*b(a|b)*}}} = \set{ w \in \{\word a, \word b\}^* \Mid \size{w}_{\word b} > 2 } $
+		\item $\lang{\visible<6-|handout:2>{\rx{b*a*}}} =$ Sprache aller Wörter über $\set{\word a, \word b}$, in denen das Teilwort \word{ab} nicht vorkommt.
 	\end{itemize}
 \end{frame}
 
-\input{../Bloecke/Graphen3Matrix}
+\input{../Bloecke/RechtslineareGrammatiken.tex}
+
+\input{../Bloecke/Turing.tex}
 
 % Hier CS50 Binary Search (Telefonbuchszene) zeigen! (Spulen!!!)
 % https://www.youtube.com/watch?v=o4SGkB_8fFs&list=PLhQjrBD2T382VRUw5ZpSxQSFrxMOdFObl
@@ -208,18 +138,17 @@
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
-			\item Mehr Eigenschaften von Graphen
-			\item Wie man Graphen darstellen kann
-			\item Adjazenz- und Wegematrizen % und wie man sie (schnell) ausrechnen kann
+			\item Rechtslineare Grammatiken und Reguläre Ausdrücke
+			\item Aufbau + Funktion von Turingmaschinen
+			\item Entscheidbarkeit und Aufzählbarkeit
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
+			\item Vorschriften zum Rechnen: Algorithmen
 			\item Lizenz zum Schludern: O-Kalkül
-			\item Einfache Laufzeitabschätzungen mit dem Master-Theorem
-			\item Endliche Automaten: Mealy und Moore
-			\item Endliche Akzeptoren
+			\item Einfache Laufzeitabschätzungen
 			%TODO nexttut
 			%\item Grenzen endlicher Automaten -- Wer kann zählen?
 			%\item Ein Regelwerk für einen Ausdruck -- Reguläre Ausdrücke

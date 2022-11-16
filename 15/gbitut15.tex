@@ -1,46 +1,136 @@
 %beamer
 
-% Dieser Foliensatz wurde noch nicht überarbeitet, da es nur 14 Tutorien gab.
-
-% Define a global usable date. Must come before StyleTut
-%\newcommand{\mydate}{05.02.2013}
-
 % Comment/uncomment this line to toggle handout mode
-%\newcommand{\handout}{}
+\newcommand{\handout}{}
 
-\input{../TutTexbib/PraeambelTut.tex}
-\input{../TutTexbib/Style_Tut.tex}
-\graphicspath{{../figures/}}
+\input{../framework/PraeambelTut.tex}
 
+\morescalingdelimiters
 
 \begin{document}
-\starttut{14}
+\starttut{15}
 
-\subsection{Quiz}
-\begin{frame}
-	\begin{itemize}
-		\item<1->\color<2->[rgb]{1,0,0} Jedes Problem kann von einer Turingmaschine entschieden werden.
-		\item<3->\color<4->[rgb]{0,1,0} Es gilt $ \textbf{P} \subset \textbf{PSPACE} $
-		\item<5->\color<6->[rgb]{1,0,0} Es gibt einen endlichen Akzeptor, der weniger Zustände hat als die entsprechende Anzahl von Nerode-Äquivalenzklassen.
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#12}
+	Schnitt: \quad 9,1 / 18~P
+
+	\begin{itemize}[<+->]
+		\item 11 von 23 TutandInnen haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ihr habt alle pünktlich abgegeben :)
+		\item Jeder, der alle Aufgaben bearbeitet hat, hat auch den Übungsschein :)
 	\end{itemize}
 \end{frame}
 
-\input{../Bloecke/NerodeRelation}
+\begin{frame}{Zu Übungsblatt \#12}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Notation: Bei Graphen/TMs/Automaten Kanten bis an die Knoten zeichnen!
+		\item[1)] Nicht jede TM ist ein Akzeptor! Es gibt auch TMs, die nur eine Berechnung durchführen \impl Ausgabe dann Bandzustand nach Terminierung
+		\item[2b)] Benutzte Variablen \textbf{immer} definieren!!!
+		\item[2c)] Hoar-Tripel lässt sich zwar anwenden, hat aber \textbf{keine Aussagekraft}, da Schleife nicht terminiert
+		\item[4b)] Induktion von n+1 nicht aussreichend, da keine direkte Aussage über nächstes n möglich
+		\item[] Alternative? 
+	\end{itemize}
+\end{frame}
 
-\input{../Bloecke/Halbordnungen}
+\begin{frame}{Aufgabe 12.4b)}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{A12.4_UB2122.png}
+\end{frame}
+
+\begin{frame}{Organisation}
+	\begin{itemize}
+		\item Übungsschein-Anmeldung noch bis 06.März
+		\item Klausur-Anmeldung noch bis 06.März
+		\item Nur noch \textbf{2 Wochen} bis zur Klausur \impl Spätestens jetzt mit Lernen anfangen
+	\end{itemize}
+\end{frame}
+
+\framePrevEpisode
+
+\begin{frame}{Kahoot!}
+	\begin{itemize}
+		\item Heute noch ein paar Fragen aus dem ganzen Semester!
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\pause
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-ubungsstunde/9733f7de-4557-4cba-ad73-c7cb64578e82}
+	\end{itemize}
+\end{frame}
+
+\input{../Bloecke/Graphen3Matrix.tex}
+
+\input{../Bloecke/Halbordnungen} %maybe not lets see
+
+\section{Aufgaben}
+\begin{frame}{Aufgabe 1: Sprachen}
+	\begin{block}{Aufgabe}
+		Gegeben seien die folgenden Sprachen:
+		\begin{itemize}
+			\item[] $L_1 = \left\{\word a^n\word b^m \quad \middle| \quad n,m\in\mathbb{N}_0, n>m\right\}$
+			\item[] $L_2 = \left\{\word a^n \word b^m \word c^o \quad \middle| \quad n,o\in\mathbb{N}_0, m\in\mathbb{N}_+\right\}$
+		\end{itemize}
+		\begin{itemize}
+			\item[a)] Geben Sie für $i\in\left\{1,2\right\}$ einen regulären Ausdruck $R_i$ an, sodass gilt: $\lang{R_i}=L_i$. \\
+				Falls eine der Sprachen nicht regulär ist, geben Sie eine kontextfreie Grammatik an, die diese Sprache erzeugt.
+			\item[b)] Geben Sie für jede reguläre Sprache $L_i$ ($i\in\left\{1,2\right\}$) einen endlichen Akzeptor $A_i$ an, der genau $L_i$ akzeptiert.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Aufgabe 1: Sprachen}
+	\begin{block}{Lösung a)}
+		\begin{itemize}
+			\item $G_1=(\{S,X\},\{\word{a}, \word{b}\},S, \{S \rightarrow \word{a}S\word{b}|X, X \rightarrow \word{a}X|\word{a}\})$
+			\item $R_2=\word{a}\ast\word{b}\word{b}\ast\word{c}\ast$
+		\end{itemize}
+	\end{block}
+	\begin{block}{Lösung b)}
+		\begin{center}
+			\begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=15mm,
+			semithick,initial text={}]
+			\tikzstyle{every state}=[]
+			
+			\node[initial,state] (A)                    {$a$};
+			\node[state,accepting] (B)  [right of=A]     {$b$};
+			\node[state,accepting]		 (M)  [right of=B]		{$c$};
+			\node[state]		 (F)  [below of=B]		{$f$};
+			
+			\path
+			(A) edge [loop above]  node {\word a} (A) 
+			(A) edge 			  node {\word b} (B) 
+			(A) edge 			  node {\word c} (F) 
+			(B) edge [loop above]  node {\word b} (B) 
+			(B) edge 			  node {\word c} (M)
+			(B) edge 			  node {\word a} (F)
+			(M) edge [loop above] node {\word c} (M)
+			(M) edge 			  node {\word a, \word b} (F)
+			(F) edge [loop below] node {\word a, \word b, \word c} (F);
+			\end{tikzpicture}
+		\end{center}
+	\end{block}
+\end{frame}
 
 %% Was ihr nun wissen solltet
 \section{Schluss}
+\def\abbrsize{\footnotesize}
 \begin{frame}
-	\frametitle{Was ihr nun wissen solltet}
-	\begin{itemize}
-		\item Was ein Hasse-Diagramm ist
-		\item Das man manchmal Triviales wirklich beweisen muss
-		\item Das es nun zu Ende ist.
-	\end{itemize}
+	\begin{block}{Und so geht es weiter...}
+		\vspace{-.3\baselineskip}
+		\begin{itemize}
+			\item \textbf{Algo}{\abbrsize rithmen} \textbf{I} \\  -- Mehr zu Algorithmen, Laufzeiten, Datenstrukturen, Graphen
+			\item \textbf{T}{\abbrsize echnische} \textbf{I}{\abbrsize nformatik} \\ -- Realisierung von Schaltungen, Prozessoren (MIMA, ...)
+			\item \textbf{T}{\abbrsize heoretische} \textbf{G}{\abbrsize rundlagen der} \textbf{I}{\abbrsize nformatik} \\ -- Mehr zu Grammatiken, Komplexität, Entscheidbarkeit, Turingmaschinen
+		\end{itemize}
+	\end{block}
 \end{frame}
 
-%% Letzte Seite
-\lastframe{0.45}{xkcd/turing_test.png}{http://xkcd.com/329/}
+%TODO replacement!!! Old xkcd
+{\xkcdframevert{2374}{Viel Erfolg  bei euren Klausuren! \smiley}{2.5}}
+%\thasse{\lastframe{0.5}{0}{xkcd/proofs_1724.png}{https://www.xkcd.com/1724/}}
 
+\slideThanks
 \end{document}

@@ -13,11 +13,42 @@
 \section{Rückblick}
 
 \begin{frame}{Zu Übungsblatt \#4}
+	Schnitt: \quad 12,7 / 20~P
+
 	\begin{itemize}[<+->]
-		\item Ist noch nicht fertig korrigiert, sorry dafür!
-		\item Kommt in den nächsten Tagen
+		\item 17 von 23 Tutanden haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ihr habt alle pünktlich abgegeben :)
+		\item Aufgabe 4.1 sehr gut, bei Induktionsaufgabe (4.3, 4.4) viele Punkte verloren
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Zu Übungsblatt \#4}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Notation: \textbf{nicht} von einer Behauptung ausgehen und dann umformen!
+		\implitem Besser (4.1 b):\quad $L_1 \cap^c L_2 = (L_1 \cap L_2)^c = (L_2 \cap L_1)^c = L_2 \cap^c L_1$ 
+		\item Notation von schrittweisem Ausrechnen einer Abbildung (4.3 a):
+		\implitem $\psi(\word{aabb}) = \word{a} \* \psi(\word{aab}) = \word{aa} \* \psi(\word{aa}) = \word{aab} \* \psi(\word{a}) = \word{aabb}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#4 - Wdh vollständige Induktion}
+	Beispiel anhand Aufgabe 4.3b)
+	\begin{itemize}[<+->]
+		\item Zu zeigen: $\psi(x\*w) = \psi(w) \* \psi(x)$ für alle $x\elem A, w\elem A^*$
+		\item Beweis durch vollständige Induktion über die Wortlänge $\abs{w}$:
+		\item[] \textbf{IA:} $\abs{w} = 0$ \impl $w = \varepsilon$\\
+			\quad Es gilt für alle $x\elem A$: $\psi(x\* \varepsilon) = \psi(x) = \varepsilon \* \psi(x) =  \psi(\varepsilon) \* \psi(x)$
+		\item[] \textbf{IV:} für ein beliebiges, aber festes $\abs{w} = n \elem \N_0$ gelte die Behauptung
+		\item[] \textbf{IS:}  $n \rightarrow n + 1$. Es gilt: $w = w' \* y$, mit $y\elem A$, $w\elem A^*$ und $\abs{w'} = n$
+		\item[] \quad $\psi(x \* w) = \psi(x \* w' \* y) = \psi(y) \* \psi(x\* w') \stackrel{IV}{=} \psi(y) \* \psi(w') \* \psi(x)$\\
+			\quad $= \psi(w' \* y) \* \psi(x) = \psi(w) \* \psi(x)$ 
+	\end{itemize}
+\end{frame}
+
+\input{../Bloecke/Induktion_Vogel.tex}
 
 %\thasse{\lastframe{0.65}{25}{xkcd/advent_calendar.png}{https://www.xkcd.com/994/}}
 
@@ -30,17 +61,17 @@
 %\end{frame}
 
  \framePrevEpisode
-
-\begin{frame}{Kahoot!}
-	\begin{itemize}[<+->]
-		\item Kahoot! ist ein anonymes Online-Quiz
-		\item Ihr bekommt Punkte für schnelles und richtiges raten
-		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
-		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-6-einstieg/8fcb5877-e3d1-4099-b6ef-c0d8193d1ef7}
-	\end{itemize}
-\end{frame}
-
+\mycomment{ %no time
+	\begin{frame}{Kahoot!}
+		\begin{itemize}[<+->]
+			\item Kahoot! ist ein anonymes Online-Quiz
+			\item Ihr bekommt Punkte für schnelles und richtiges raten
+			\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+			\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+				\url{https://create.kahoot.it/share/gbi-woche-6-einstieg/8fcb5877-e3d1-4099-b6ef-c0d8193d1ef7}
+		\end{itemize}
+	\end{frame}
+}
 %\begin{frame}[t]{Wahr oder falsch?} 
 %		% Socrative: https://b.socrative.com/teacher/#import-quiz/31589970
 %		
@@ -70,7 +101,7 @@
 	\end{itemize}
 \end{frame}
 
-\input{../Bloecke/Huffmann}
+\input{../Bloecke/Huffmann.tex}
 
 \input{../Bloecke/Zweierkomplement.tex}
 

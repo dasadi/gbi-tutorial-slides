@@ -15,14 +15,14 @@
 \section{Rückblick}
 
 \begin{frame}{Zu Übungsblatt \#3}
-	Schnitt: \quad 17,4 / 22~P
+	Schnitt: \quad 12,7 / 20~P
 
 	\begin{itemize}[<+->]
-		\item 19 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item 17 von 23 Tutanden haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
 		\item Ihr habt alle pünktlich abgegeben :)
-		\item Sehr gute Abgaben, weiter so!
+		\item Eigentlich sehr gute Abgaben, viele Punkte bei 3.5 verloren
 	\end{itemize}
 \end{frame}
 
@@ -30,26 +30,40 @@
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
 		\item Formulierung: eine Formel \textit{ist} nicht wahr, sondern sie wird \textit{als wahr interpretiert}.
-		\item keine Begründungen angeben, wenn nicht gefordert
-		\item Aufgabe 3.4b): \textit{Wenn $G$ erfüllbar ist, dann ist $F$ unerfüllbar}
-		\implitem Widerlegen durch Gegenbeispiel:
-		\item[] Sei $F = P_0$ mit $P_0 \in Var_{AL}$.
-		\item[] Dann ist $G$ erfüllbar, denn für die Interpretation $I_1$ mit $I_1(P_0)=\F$ ist $val_{I_1}(G)=\W$.
-		\item[] Es ist aber auch $F$ erfüllbar, denn für die Interpretation $I_2$ mit $I_2(P_0)=\W$ ist $val_{I_2}(F)=\W$.
-		\implitem Dann sind $G$ und $F$ beide erfüllbar, was der Behauptung widerspricht.
-		\item Aufgabe 3.5d): Die Definition von Monotonie gibt keine Punkte!
+		\item Aussagenlogische Formeln (AL-Formeln) enthalten keinen Wahrheitswert
+		\item AL-Formeln enthalten keine Aussagen, wie $x \elem A$
+		\item Äquivalenz bei \textbf{AL-Formeln} ist $\equiv$ , bei \textbf{anderen Aussagen} $\gdw$
+		\item 3.3b): Das De Morgan'sche Gesetz musste gezeigt werden
+		\implitem Das Gesetz selbst darf nicht im Beweis benutzt werden (sonst ist das ein Beweis wie 3.5c))
+		\item[] Beweis: $\bleftBr P \boder Q \brightBr \equiv \bnot\bleftBr\bnot \bleftBr P \boder Q \brightBr\brightBr$
+		\item[] \textit{Nach Teil a)}:  $\bnot\bleftBr\bnot \bleftBr P \boder Q \brightBr \brightBr \equiv \bnot \bleftBr \bnot P \bund \bnot Q \brightBr$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#3}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item 3.4b): $P=x\elem A$ ist keine korrekte Notation, da die AL-Variable $P$ selbst keinen Wahrheitswert besitzt
+		\implitem Modellierung notwendig: z.B. definiere $A \widehat{=} F$ als \textit{Sachverhalt $A$ wird durch AL-Formel $F$ modelliert}
+		\item 3.5a) AL-Formel für Aussage 3: \\
+		Der Erfolg von Abteilung Q muss den Erfolg von Abteilung P nach sich ziehen
+		und darf auf keinen Fall zum Scheitern von Abteilung R führen.
+		\implitem $\bleftBr Q \bimp \bleftBr P \bund R \brightBr \brightBr$
+		\item 3.5c) Der Beweis ist fehlerhaft: Durch \textbf{Tautologie} $\bleftBr A \bimp A \brightBr$ ist der Erfolg des Beweises
+		$\bleftBr A \bimp A \bimp X \brightBr$ nur von der Interpretation von $X$ abhängig.
 	\end{itemize}
 \end{frame}
 
  \framePrevEpisode
 
 \begin{frame}{Kahoot!}
-	\begin{itemize}[<+->]
+	\begin{itemize}
 		\item Kahoot! ist ein anonymes Online-Quiz
 		\item Ihr bekommt Punkte für schnelles und richtiges raten
 		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\pause
 		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-5-einstieg/ae77276b-39ed-4196-9bf4-12a9f0bdad28}
+			\url{https://create.kahoot.it/share/gbi-woche-5-einstieg/b00f2e0a-0ac4-4df4-ae52-1db141476132}
 	\end{itemize}
 \end{frame}
  
@@ -151,13 +165,13 @@
 		\begin{itemize}
 			\item Huffman-Codierung -- möglichst viel Platz sparen
 			\item Zweierkomplement -- negative Binärzahlen
-			\item Speicher -- Damit wir nicht alles gleich wieder vergessen
-			\item MIMA -- Den Bits beim Arbeiten zuschauen
+			\item Speicher
+			\item MIMA -- Die Funktionsweise eines Mikroprozessors
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\xkcdframe{571}{Danke für eure Aufmerksamkeit! \smiley}{2.5} % Zweierkomplement
+\xkcdframevert{153}{Danke für eure Aufmerksamkeit! \smiley}{2.5} % Zweierkomplement
 % \lastframe{0.75}{0}{xkcd/tar.png}{https://www.xkcd.com/1168/} % Komprimierung
 
 \slideThanks

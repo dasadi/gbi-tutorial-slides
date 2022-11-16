@@ -21,13 +21,15 @@
 \section{Rückblick}
 
 \begin{frame}{Zu Übungsblatt \#6}
-	Schnitt: \quad 17,7 / 23~P
+	Schnitt: \quad 9,5 / 17~P
 
 	\begin{itemize}[<+->]
-		\item 19 von 23 Tutanden haben etwas abgegeben
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item 16 von 23 Tutanden haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
 		\item Ihr habt alle pünktlich abgegeben :)
+		\item Es gab eine Änderung der Punkte: Aufgabe 6.2b) wurde Zusatzaufgabe mit 3 Punkten
+		\item Viele haben bei Aufgabe 6.3 nichts / Teillösungen abgegeben \impl etwas niedriger Durchschnitt
 	\end{itemize}
 \end{frame}
 
@@ -35,73 +37,35 @@
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
 		\item Wie immer: Vorsicht bei der Notation!
-		\item Aufgabe 6.1a): Bei Huffman-Bäumen muss man die beiden freien Knoten verbinden, die die niedrigste Summe bilden.
-		\implitem Wenn Knoten mit den Anzahlen $4$, $3$ und $3$ frei sind, muss man die Dreien verbinden.
-		\item Aufgabe 6.2a): Es war gefordert, ``die Definition von $P_c$ höchstens einmal'' pro Schritt anzuwenden. Beim Rest dürft ihr abkürzen.
-		\implitem Spart euch Schreibarbeit und mit Korrekturarbeit \smiley
-		\item Aufgabe 6.2c): Bei einer Induktion müsst ihr in GBI \textbf{immer} I.A., I.V. und I.S. angeben
-		\item[] in der I.V. nehmt ihr die zu beweisende Aussage für \textbf{ein} festes aber beliebiges $n \in \mathbb{N}$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Zu Übungsblatt \#6}
-	Die häufigsten Fehler:
-	\begin{itemize}[<+->]
-		\item Aufgabe 6.3c): Übersetzungen zwischen Zweierkomplementdarstellungen verschiedener Längen:
-			\begin{threealign}
-				Ü_k : A^\ell &\functionto& A^{\ell + k} \qquad (\ell \in \mathbb{N}_+, k \in \mathbb{N}_0) \\
-				w &\mapsto& \begin{cases}
-					\word 0^kw, & w(0) = \word 0 \\
-					\word 1^kw, & w(0) = \word 1
-				\end{cases}
-			\end{threealign}
-		\item[] Der Wert der durch $bw \in A^\ell$ mit $b\in A, w \in A^{\ell - 1}$ im ZKPL dargestellten Zahl ist $-2^{|w|}\cdot num_2(b) + Num_2(w)$
-		\item[] Der Wert der durch $b^kbw$ im ZKPL dargestellten Zahl ist $-2^{|w| + k}\cdot num_2(b) + Num_2(b^kw)$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Zu Übungsblatt \#6}
-	\begin{itemize}
-		\item[] Der Wert der durch $bw \in A^\ell$ mit $b\in A, w \in A^{\ell - 1}$ im ZKPL dargestellten Zahl ist $-2^{|w|}\cdot num_2(b) + Num_2(w)$
-		\item[] Der Wert der durch $b^kbw$ im ZKPL dargestellten Zahl ist $-2^{|w| + k}\cdot num_2(b) + Num_2(b^kw)$
-		\implitem Es gilt:
-		\begin{align*}
-			& -2^{|w| + k}\cdot num_2(b) + Num_2(b^kw) \\
-			=& -2^{|w| + k}\cdot num_2(b) + Num_2(b^k) \cdot 2^{|w|} + Num_2(w) \\
-			=& -2^{|w| + k}\cdot num_2(b) + \left(2^k-1\right) \cdot num_2(b) \cdot 2^{|w|} + Num_2(w) \\
-			=& \left(-2^{|w| + k} + \left(2^k-1\right)\cdot 2^{|w|}\right) \cdot num_2(b) + Num_2(w) \\
-			=& \left(-2^{|w| + k} + 2^{|w| + k} -2^{|w|}\right) \cdot num_2(b) + Num_2(w) \\
-			=& -2^{|w|} \cdot num_2(b) + Num_2(w)
-		\end{align*}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Zu Übungsblatt \#6}
-	Die häufigsten Fehler:
-	\begin{itemize}[<+->]
-		\item Aufgabe 6.5a): Man sagt ``höchstwertiges'' Bit, nicht ``vorderstes''
-		\item Aufgabe 6.5b): Geschenk vom Worschnachtsmann
+		\item Aufgabe 6.3: $x \elem w$ ist \textbf{keine} korrekte Notation, wenn $w$ ein Wort ist!!!
+		\item Aufgabe 6.2a): Ein Huffmann-Baum hat an den Blättern \textbf{immer} das Zeichen \& die Häufigkeit stehen!
+		\item Aufgabe 6.2b): Bei einem ternären Alphabet kommt es bei $\abs{M_0}$ zu einem Problem
+		\implitem Anpassung notwendig
+		\item Aufgabe 3: Jetzt nochmal gemeinsam zum Üben!
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Übungsschein, die Zweite}
 	Die erste Hälfte ist rum. Zeit für die Zweite.
 	\begin{itemize}[<+->]
-		\item Jeder, der es ernsthaft versucht hat, hat die erste Hälfte geschafft. Weiter so!
+		\item Fast jeder, der es ernsthaft versucht hat, hat die erste Hälfte geschafft. Weiter so!
+		\item Es gab in der ersten Hälfte 116,5~P \impl Bestehen ab 55~P
 		\item Auf Blatt 7 bis 12 müsst ihr wieder mindestens 50\% der Punkte erreichen
 		\item Ihr dürft ab sofort nur noch alleine abgeben
-		\implitem knappere Korrekturen
+		\implitem knappere Korrekturen mit weniger Erklärungen
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Klausur}
-	\begin{itemize}[<+->]
-		\item Termin: 06. März 2021 von 09:00 Uhr bis 11:00
-		\item Einlass: Vermutlich bis zu einer Stunde früher, ihr werdet eine Uhrzeit zugewiesen bekommen
-		\item Ort: In der Gartenhalle (beim Zoo) und in den Zelten (vor dem Audimax)
-		\item
-	\end{itemize}
-\end{frame}
+\mycomment{%Not yet known
+	\begin{frame}{Klausur}
+		\begin{itemize}[<+->]
+			\item Termin: 06. März 2021 von 09:00 Uhr bis 11:00
+			\item Einlass: Vermutlich bis zu einer Stunde früher, ihr werdet eine Uhrzeit zugewiesen bekommen
+			\item Ort: In der Gartenhalle (beim Zoo) und in den Zelten (vor dem Audimax)
+			\item
+		\end{itemize}
+	\end{frame}
+}
 
 \framePrevEpisode
 
@@ -111,7 +75,7 @@
 		\item Ihr bekommt Punkte für schnelles und richtiges raten
 		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
 		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-8-einstieg/7a48a425-5e21-414c-b4ed-8d5418cb7d30}
+			\url{https://create.kahoot.it/share/gbi-woche-8/f4c8d9b1-38fe-41e1-97f9-9576703e02ae}
 	\end{itemize}
 \end{frame}
 
@@ -122,30 +86,55 @@
 %	Wird aber trotzdem von mir korrigiert. \smiley
 %\end{frame}
 
-\mycomment{
-	\begin{frame}{Rückblick: MIMA}
-		\begin{itemize}[<+->]
-			\item Ein idealisierter Prozessor
-			\item Einfach zu verstehen, aufwändig zu programmieren
-			\item Hardware-Details beachten: Keine negativen Konstanten mit LDC möglich!
-			\item Programme sind oftmals mit \enquote{Bit-Magie} einfacher und kürzer (aber auch schwerer zu verstehen)
-		\end{itemize}
-	\end{frame}
-}
-
-\begin{frame}{Rückblick: Kontextfreie Grammatiken}
+\begin{frame}{Rückblick: MIMA}
 	\begin{itemize}[<+->]
-		\item Ein Vier-Tupel: $G = (N, T, S, P)$
-		\item[] z.B. $N=\left\{X,Y\right\}, T=\left\{\word{a}, \word{b}\right\}, S=X, P=\left\{X \to \word a Y, Y \to Y \mid \word b \right\}$
-		\item Produktionen definieren Ersetzungen eines Nichtterminals mit Wörtern über $N \cup T$
-		\item Wir wenden Produktionen in Ableitungsschritten an: $v \Rightarrow w, v \Rightarrow^* w$
-		\item[] z.B. $X \derives \word a Y$, $Y \derives Y$, $Y \derives^{2020} Y$, $\word{aaa}Y\word{bbb} \derives \word{aaabbbb}$, $X \derives^2 \word{ab}$ oder $X \derives^\ast \word{ab}$
-		\item $L(G)$ sind alle aus $S$ ableitbaren Wörter über $T$ (die also nur aus Terminalsymbolen bestehen)
+		\item Ein idealisierter Prozessor
+		\item Einfach zu verstehen, aufwändig zu programmieren
+		\item Hardware-Details beachten: Keine negativen Konstanten mit LDC möglich!
+		\item Programme sind oftmals mit \enquote{Bit-Magie} einfacher und kürzer (aber auch schwerer zu verstehen)
+	\end{itemize}
+\end{frame}
+\begin{frame}{Noch offen: Klammerausdrücke}
+	A long, long time ago, in a land far away:\\
+	\medskip
+	Formale Sprachen angeben durch $\set{}, \*, {}^+, {}^*$...\\
+	Was ist mit der \textbf{Sprache aller gültigen Klammerausdrücke}? Können wir die auch so angeben?\\[1em]
+	\pause
+	\impl Jetzt wissen wir: \textbf{Nein}, das geht nicht! (Siehe VL)\\[1em]
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{xkcd/(.png}
+		\vspace{-7pt}
+		\caption{ \texttt{\url{https://xkcd.com/859/}} }
+	\end{figure}
+\end{frame}
+
+\section{Dokumente}
+\begin{frame}{Dokumente}
+	\begin{itemize}
+		\item Dokumente bestehend aus drei Aspekten
+		\pause
+		\item \textbf{Inhalt}: Was steht eigentlich da?
+		\item \textbf{Struktur}: Wie ist der Text gegliedert/strukturiert?
+		\item \textbf{Form}: Wie ist das Erscheinungsbild ?
 	\end{itemize}
 \end{frame}
 
-\section{Fortsetzung kontextfreie Grammatiken}
+\input{../Bloecke/Grammatiken.tex}
 
+\mycomment{%maybe next tut
+	\begin{frame}{Rückblick: Kontextfreie Grammatiken}
+		\begin{itemize}[<+->]
+			\item Ein Vier-Tupel: $G = (N, T, S, P)$
+			\item[] z.B. $N=\left\{X,Y\right\}, T=\left\{\word{a}, \word{b}\right\}, S=X, P=\left\{X \to \word a Y, Y \to Y \mid \word b \right\}$
+			\item Produktionen definieren Ersetzungen eines Nichtterminals mit Wörtern über $N \cup T$
+			\item Wir wenden Produktionen in Ableitungsschritten an: $v \Rightarrow w, v \Rightarrow^* w$
+			\item[] z.B. $X \derives \word a Y$, $Y \derives Y$, $Y \derives^{2020} Y$, $\word{aaa}Y\word{bbb} \derives \word{aaabbbb}$, $X \derives^2 \word{ab}$ oder $X \derives^\ast \word{ab}$
+			\item $L(G)$ sind alle aus $S$ ableitbaren Wörter über $T$ (die also nur aus Terminalsymbolen bestehen)
+		\end{itemize}
+	\end{frame}
+}
 %\begin{frame}[t]{Wahr oder Falsch?}
 %	\Socrative
 %	Sei $G=(\{X,Y\},\, \{\word a, \word b\},\, X,\, P)$ eine kontextfreie Grammatik. \\
@@ -156,10 +145,6 @@
 %	\FalseQuestionE{Wenn $X \derives^* w$ gilt, dann ist $X \to w$ eine Produktion in P.}{Sei $P=\{X \to XX \mid \word a\}$. Dann gilt $X \derives^* X\word a$, aber $X \to X\word a \notin P$.}
 %\end{frame}
 
-\input{../Bloecke/Grammatiken.tex}
-
-% Nicht unbed. nötig. Je nach Zeitbudget.
-\input{../Bloecke/Relationen2.tex}
 
 %\input{../Bloecke/Praedikatenlogik.tex}
 
@@ -168,9 +153,10 @@
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
+			\item Was kontextfreie Grammatiken sind
 			\item Wie man Sprachen mit Grammatiken beschreiben kann
 			\item Wie man Grammatiken arbeiten kann
-			\item Welche Eigenschaften Relationen haben können
+			%\item Welche Eigenschaften Relationen haben können
 			%\item Wie Prädikatenlogische Formeln aufgebaut sind
 			%\item Wie man damit präzise Aussagen trifft
 			%\item Wie man sie auswertet
@@ -179,9 +165,10 @@
 	
 	\begin{block}{Was nächstes Mal kommt}
 		\begin{itemize}
-			\item Wie man damit prädikatenlogische Formeln auswertet
+			\item Weitere Eigenschaften von Relationen
+			\item Wie Prädikatenlogische Formeln aufgebaut sind
+			\item Wie man prädikatenlogische Formeln auswertet
 			\item Wie man damit präzise Aussagen trifft
-			\item Alles korrekt? –- Beweise mit dem Hoare-Kalkül
 		\end{itemize}
 	\end{block}
 \end{frame}

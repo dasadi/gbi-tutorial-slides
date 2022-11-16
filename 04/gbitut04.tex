@@ -13,37 +13,62 @@
 \section{Rückblick}
 
 \begin{frame}{Zu Übungsblatt \#2}
-	Schnitt: \quad 9,9 / 17~P
+	Schnitt: \quad 10,7 / 20~P
 
 	\begin{itemize}[<+->]
-		\item 19 von 23 Tutanden haben etwas abgegeben. Weiter so!
-		\item Die Korrektur und die Musterlösung findet ihr im ILIAS-Aufgaben-Objekt
-		\item Nur die Person, die das Übungsblatt abgegeben hat, bekommt die Rückmeldung \impl tauscht euch aus!
+		\item 19 von 24 TutandInnen haben etwas abgegeben. Weiter so!
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
 		\item Ihr habt alle pünktlich abgegeben :)
-		\item Notation lief um einiges besser, aber immer noch nicht perfekt
+		\item Das zweite Übungsblatt war die letzten Jahre immer schwierig
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Zu Übungsblatt \#2}
 	Die häufigsten Fehler:
 	\begin{itemize}[<+->]
-		\item Definiert alle Variablen, die ihr benutzt! \\
-			z.B. wenn ihr schreiben wollt: \textit{aus $w(i)=0$ folgt $w(i) \not = 1$}, dann müsst ihr vorher irgendwo $w$ und $i$ definiert haben.
-		\item Eine \textbf{Annahme} beschreibt etwas, das \textit{eigentlich} nicht unbedingt gelten muss, bei dem ihr aber \textit{annehmt}, dass es gilt.
-		\implitem Benutzen bei Widerspruchsbeweisen und Fallunterscheidungen (\textit{Fall 1: $x=0$: ..., Fall 2: $x \not = 0$: ...})
-		\implitem Nicht als Überschrift für Definitionen, Voraussetzungen und Beweise benutzen!
+		\item Definiert alle Variablen, die ihr benutzt!
+		\item Benutzt Variablen nicht doppelt \\
+				z.B. bei: $n \mapsto \{n \elem \N_0 \mid n > 5\}$ ist unklar, was mit n gemeint ist
+		\implitem \begin{enumerate}
+			\item $n \mapsto \{x \elem \N_0 \mid x > 5\}$
+			\item $n \mapsto \{x \elem \N_0 \mid x > 5, x > n\}$
+		\end{enumerate}
 		\item Einfach Pfeile ($\leftarrow, \rightarrow, \leftrightarrow$) benutzt man nur bei der \textit{formalen} Betrachtung von Aussagenlogik!
 		\implitem Für Folgerungen und Äquivalenzen im Beweis benutzt man Doppelpfeile ($\Rightarrow, \Leftarrow, \Leftrightarrow$).
 		\item Behauptungen müsst ihr als solche kennzeichnen
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Zu Übungsblatt \#2}
-	Die häufigsten Fehler:
+\begin{frame}{Zu Übungsblatt \#2 - Aufgabe 2.1}
 	\begin{itemize}[<+->]
-		\item Kommutativität und Assoziativität zeigen
-		\item Kommutativität und Assoziativität widerlegen
-		\item Wir machen das jetzt nochmal zusammen
+		\item M (von Übungsblatt 1) vs. $\mathcal{M}$ (von Übungsblatt 2)
+		\implitem $\mathcal{M}$ enthällt \textbf{Mengen} und keine einzelnen Tupel
+		\item Bitte aktualisierte Version des ÜBs nochmal anschauen, da Relation jetzt korrekt formuliert!
+		\item e): Die Vereinigung ist \textbf{nicht} linkstotal
+		\item Warum?
+		\implitem Weil aus 2 korrekten Tupelmengen eine nicht korrekte Tupelmenge mit $\cup$ gebildet werden kann\\
+			z.B. $\{(a,1)\}$ und $\{(a,2)\}$ würden mit der Vereinigung zu $\{(a,1), (a,2)\}$ führen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#2 - Aufgabe 2.3}
+	\begin{itemize}[<+->]
+		\item b): evil(e) war eine Abbildung zu einer unendlichen \textbf{Menge von unendlichen Mengen}
+		\implitem $evil(x) := \{y\elem\N_+\mid y > x\}$ ist \textbf{keine} korrekte Antwort
+		\implitem Sei $x\elem \N_+$ , $G(x) := \{y\elem\N_+\mid y > x\}$ und \\
+			$evil(x) := \{T \subset \N \mid $ T enthält genau ein Element aus $G(x)$ nicht$\}$
+		\item c): Definiton der Funktion durch Potenzmenge gesucht, da nur so mehrere/keine Optionen abgedeckt werden können
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#2 - Wdh. Set-Comprehensions}
+	\begin{itemize}[<+->]
+		\item Grundsätzliche Form: $\set{... \vphantom{(} \Mid ......}$
+		\item Linke Seite: irgendeine Variable, z.B. $n\elem\N$
+		\item Rechte Seite: Eine Bedingung für die Variable, z.B. $n>2$
+		\implitem Zusammen: $\set{n\elem\N \vphantom{(} \Mid n>2}$
+		\item Mehrere Bedingungen durch \textbf{,} separiert
 	\end{itemize}
 \end{frame}
 
@@ -55,7 +80,7 @@
 		\item Ihr bekommt Punkte für schnelles und richtiges raten
 		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
 		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
-			\url{https://create.kahoot.it/share/gbi-woche-4-einstieg/248b2b88-580f-45e2-bc13-086013dc23b0}
+			\url{https://create.kahoot.it/share/gbi-woche-4-einstieg/869ad0a5-9772-43a9-8a85-b03d44a99625}
 	\end{itemize}
 \end{frame}
 
@@ -84,9 +109,7 @@
 %\end{frame}
 
 
-\input{../Bloecke/Aussagenlogik.tex}
-
-\input{../Bloecke/Aussagenlogik2}
+\input{../Bloecke/Induktion.tex}
 
 \input{../Bloecke/FormaleSprachen.tex}
 
@@ -134,11 +157,8 @@
 \begin{frame}	
 	\begin{block}{Was ihr nun wissen solltet}
 		\begin{itemize}
-			\item Wie man Kommutativität und Assoziativität zeigt und widerlegt
-			\item Was die Grundsätze der Aussagenlogik sind
-			\item Wie man aussagenlogische Formeln zusammenbastelt
-			\item Wie man aussagenlogische Formeln auswertet
-			\item Was der Kalkül der Aussagenlogik ist
+			\item Wie man einen Beweis mittels vollständiger Induktion führt
+			\item Was man nicht per vollständiger Induktion beweisen kann
 			\item Was eine formale Sprache ist und warum das Konzept wichtig ist
 			\item Wie man formale Sprachen formal angeben kann
 			\item Wie man formale Sprachen konkateniert

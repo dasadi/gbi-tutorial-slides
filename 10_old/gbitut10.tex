@@ -1,0 +1,134 @@
+%beamer
+
+% Comment/uncomment this line to toggle handout mode
+%\newcommand{\handout}{}
+
+\input{../framework/PraeambelTut.tex}
+
+\morescalingdelimiters
+
+\begin{document}
+\starttut{10}
+
+\section{Rückblick}
+
+\begin{frame}{Zu Übungsblatt \#7}
+	Bisheriger Schnitt: \quad 12.8 / 20~P
+
+	\begin{itemize}[<+->]
+		\item 14 von 23 Tutanden haben etwas abgegeben
+		\item Die Musterlösung findet ihr im \ILIAS unter Übungsblätter
+		\item Korrekturen gibt es jetzt!
+		\item Ihr habt alle pünktlich abgegeben :)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#7}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item Versucht, euch kurz und präzise auszudrücken \small{(Zwei Seiten Text für 1,5 Punkte sind einfach zu viel)}
+		\implitem spart euch und mir Zeit, die in der Klausur knapp sein wird
+		\implitem bei langen Formulierungen wird's oft schwammig
+		\item[1)] Induktion muss nicht sein, das ging besser ohne
+		\item[2a)] $\varepsilon$ nicht vergessen, das ist ein typischer Randfall
+		\item[2c)] auch hier formal argumentieren:
+		\item[] Angenommen es existiert $P''$ sodass $L(G'')=\{\word{aa},\word b\}^*$. Dann gilt $S \derives^* \varepsilon$ und wegen $S\rightarrow \word aS \in P$ auch $S \derives \word aS \derives^* \word a$ und damit $a\in L(G'')=\{\word{aa},\word b\}^*$. Widerspruch.
+		\item[4d.ii)] Für unendliche Mengen haben wir die Kardinalität nicht definiert! 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#8}
+	Bisheriger Schnitt: \quad 12.8 / 19~P
+
+	\begin{itemize}[<+->]
+		\item 15 von 23 Tutanden haben etwas abgegeben
+		\item Die Korrektur und die Musterlösung findet ihr wie immer im ILIAS-Aufgaben-Objekt
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#8}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item[1)] Prädikatenlogische Formeln aufstellen: Wenn wir PL-Formeln formal betrachten, müsst ihr auf alle Formalien achten!
+		\item Relationen als Mengen interpretieren, z.B. $I(P)=\left\{ x \in \mathbb{N}_0 \middle| x \text{ gerade }\right\}$ oder $I(R)= \left\{(x,y) \in \mathbb{N}_0 \times \mathbb{N}_0 \middle| x = 2y \right\}$
+		\item Genau auf die Formulierung der Aufgabe achten, z.B. ``\textbf{entweder} oder''
+		\item[2)] Linkstotalität durch einfache Schlussfolgerungen beweisen
+		\item[] z.B. Wenn $S\circ R$ linkstotal, dann $\forall x \in M \exists z\in M : x(S\circ R)z$, also nach Def. von $\circ$ insb. $\forall x\in M \exists y,z\in M : xRy \aland ySz$ und daraus folgt $\forall x \in M \exists y \in M : xRy$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Zu Übungsblatt \#8}
+	Die häufigsten Fehler:
+	\begin{itemize}[<+->]
+		\item[3b)] Dass zwei PL-Formeln nicht logisch äquivalent sind, zeigt man mit einem konkreten Gegenbeispiel:
+		\item[] eine Interpretation (und ggf. Variablenbelegung), für die eine Formel wahr und die andere falsch ist.
+		\item In PL-Formeln darf man formal nichts einsetzen. Für Auswertungen die Auswertungsfunktion $val_{D,I,\beta}$ benutzen!
+		\item[4)] Beim Umgang mit PL-Formeln müssen Variablensymbole unterschieden werden: $x$ ist ein Symbol, $\beta(x)$ sein Wert
+	\end{itemize}
+\end{frame}
+
+
+%\lastframe{0.42}{35}{xkcd/dfs_761.png}{https://www.xkcd.com/761}
+
+\framePrevEpisode
+
+\begin{frame}{Kahoot!}
+	\begin{itemize}[<+->]
+		\item Kahoot! ist ein anonymes Online-Quiz
+		\item Ihr bekommt Punkte für schnelles und richtiges raten
+		\item Ich schalte das Quiz frei und ihr könnt über \url{https://kahoot.it} beitreten
+		\item Das Kahoot! könnt ihr euch später nochmal unter diesem Link angucken: \\
+			\url{https://create.kahoot.it/share/gbi-woche-10-einstieg/05064fb0-465a-4382-bf7b-3c4d37a9fb86}
+	\end{itemize}
+\end{frame}
+
+
+%\begin{frame}[t]{Wahr oder Falsch?}
+%	\Socrative
+%	\FalseQuestionE{Die Korrektheit eines Algorithmus kann man immer durch Testen beweisen.}{{\textbf{Nein, nein, nein!}} Durch Testen sieht man höchstens, wo Fehler sind, aber nicht, ob es keine gibt.}
+%	\FalseQuestionE{Sinnvolle Schleifeninvarianten kann man \enquote{nach Kochrezept} aufstellen.}{Nein, das Aufstellen sinnvoller Schleifeninvarianten erfordert viel Übung und kann insbesondere \textbf{nicht} vom Rechner gemacht werden.}
+%	\FalseQuestionE{Ein Algorithmus ist ein (kompilierbares/ausführbares) Programm.}{Nein, der Algorithmus selbst ist nur die Beschreibung der (Rechen-)\\ Vorschriften, nicht die tatsächliche Umsetzung in Programmcode.}
+%	\mycomment{
+%		\TrueQuestion{$x = y \aland y = z \impl x = z$ ist allgemeingültig}
+%		\FalseQuestion{$x = z \impl x = y \aland y = z$ ist allgemeingültig}
+%	}
+%\end{frame}
+
+
+%\begin{frame}[t]{Wahr oder falsch?}
+%	\FalseQuestionE{HT-I wird auf Iterationen angewendet.}{HT-I bei \kw{if}-Verzweigungen.}
+%	\FalseQuestionE{Ein laut Kalkül gültiges Hoare-Tripel garantiert die Korrektheit \\ des Algorithmus.}{Es muss auch gezeigt werden, dass der Algorithmus terminiert.}
+%	%\TrueQuestion{Der Hoare-Kalkül hilft einem, die Korrektheit eines Algorithmus zu beweisen.}
+%	%\FalseQuestionE{Der Hoare-Kalkül besteht aus den Axiomen HT-A, HT-E, HT-I, \\ HT-W, HT-S.}{Nur HT-A ist Axiom, die anderen sind Schlussregeln.}
+%\end{frame}
+
+\input{../Bloecke/Hoare.tex}
+
+\input{../Bloecke/Graphen}
+
+\begin{frame}	
+	\begin{block}{Was ihr nun wissen solltet}
+		\begin{itemize}
+			\item Wie der Hoare-Kalkül funktioniert % TODO maybe
+			\item Wie man mit dem Hoare-Kalkül ein Programm beweist.
+			\item Grundbegriffe der Graphen
+			%\item Zentrale Eigenschaften von Graphen
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Was nächstes Mal kommt}
+		\begin{itemize}
+			\item Zentrale Eigenschaften von Graphen
+			\item Wie man Graphen darstellen kann
+			\item Warum dauert das so lange? -- Laufzeitbetrachtungen
+			%\item One to rule them all -- Das Master-Theorem
+			%\item Alles nur von Hand? -- Hier kommen die Automaten!
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\xkcdframe{974}{Danke für eure Aufmerksamkeit! \smiley}{2.5}
+%\lastframe{0.65}{0}{xkcd/the_general_problem_974.png}{http://www.xkcd.com/974}
+\slideThanks
+
+\end{document}
